@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from products.models import Product
+from django.contrib import messages
 # Create your views here.
 
 
@@ -24,3 +25,36 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(redirect_url)
     
+
+def adjust_bag(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+
+    if quantity > 99:
+        messages.error(
+            request, 'Sorry, value must be less then or equal to 99.')
+    elif quantity > 0:
+        bag[item_id] = quantity
+        messages.success(
+            request, f'Updated {product.name}\
+                quantity to {bag[item_id]}')
+    else:
+        bag.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your bag')
+
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
+
+
+def remove_from_bag(request, item_id):
+    """Remove the item from the shopping bag"""
+
+    product = get_object_or_404(Product, pk=item_id)
+    bag = request.session.get('bag', {})
+    bag.pop(item_id)
+    messages.success(request, f'Removed {product.name} from your bag')
+    request.session['bag'] = bag
+    return HttpResponse(status=200)
