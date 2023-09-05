@@ -3,8 +3,9 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
-from .forms import OrderForm
+from .forms import OrderForm, CouponForm
 from .models import Order, OrderLineItem
+from .models import Coupon
 
 from products.models import Product
 from profiles.models import UserProfile
@@ -13,6 +14,46 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+
+
+def get_coupon(request, code):
+    """Get a coupon code stored in the database"""
+    # coupon code based on freeCodeCamp.org
+    # credited in README
+    try:
+        coupon = Coupon.objects.get(code=code)
+        return coupon
+    except ObjectDoesNotExist:
+        messages.info(request, "This coupon does not exist")
+        return redirect("checkout")
+
+
+def add_coupon(request):
+    """Allow a user to add the coupon code"""
+
+    code = request.POST.get("code")
+
+    try:
+        coupon = Coupon.objects.get(code=code)
+        request.session["coupon_id"] = coupon.id
+        messages.info(request, f"Coupon code: { code } applied")
+    except Coupon.DoesNotExist:
+        request.session["coupon_id"] = None
+        messages.error(request, f"Sorry, { code } is not a valid code")
+        return redirect("checkout")
+    else:
+        return redirect("checkout")
+
+
+def remove_coupon(request):
+    """Remove coupon code"""
+
+    # Based on unit testing - remove coupon_id only if in session
+    if "coupon_id" in request.session:
+        del request.session["coupon_id"]
+    messages.success(request, "The coupon has been removed")
+    return redirect("checkout")
+
 
 @require_POST
 def cache_checkout_data(request):

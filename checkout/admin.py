@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, Coupon
+
+
+class CouponAdmin(admin.ModelAdmin):
+    model = Coupon
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
@@ -30,3 +34,4 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Order, OrderAdmin)
+admin.site.register(Coupon, CouponAdmin)

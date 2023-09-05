@@ -3,11 +3,30 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+from decimal import Decimal
 
 from django_countries.fields import CountryField
 
 from products.models import Product
 from profiles.models import UserProfile
+
+
+class Coupon(models.Model):
+    code = models.CharField(max_length=50, unique=True)
+    discount = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=False,
+        default=0,
+        help_text="Discount in Percentage",
+    )
+    active = models.BooleanField(default=True)
+    start_date = models.DateField()
+    expiry_date = models.DateField()
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.code
 
 
 class Order(models.Model):
@@ -29,6 +48,7 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    coupon = models.ForeignKey(Coupon, on_delete=models.SET_NULL, blank=True, null=True)
 
     def _generate_order_number(self):
         """
@@ -46,6 +66,11 @@ class Order(models.Model):
             self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.delivery_cost = 0
+
+        # code for coupon
+        if self.coupon is not None:
+            discount = self.order_total * (self.coupon.discount / Decimal(100))
+            self.order_total -= discount
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
