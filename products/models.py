@@ -61,6 +61,25 @@ class Product(models.Model):
     @property
     def sale_price(self):
         return (self.price) - (self.discounted_price)
-        
+
     def __str__(self):
         return self.name
+
+
+class Reviews(models.Model):
+    """Model for product reviews"""
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, blank=True)
+    review = models.TextField(max_length=1500, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["user", "product"], name="reviews_per_user")
+        ]
+
+    def __str__(self):
+        return self.title
