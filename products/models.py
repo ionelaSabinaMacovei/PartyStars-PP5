@@ -16,6 +16,17 @@ class Category(models.Model):
         return self.friendly_name
 
 
+def generate_sku():
+    """Generate a random 6-digit SKU"""
+    digits = string.digits
+    sku = "".join(random.choice(digits) for x in range(6))
+
+    while Product.objects.filter(sku=sku).exists():
+        sku = "".join(random.choice(digits) for x in range(6))
+
+    return sku
+
+
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
