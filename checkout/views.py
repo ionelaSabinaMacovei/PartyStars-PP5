@@ -76,6 +76,8 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    coupon_form = CouponForm()
+
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -92,11 +94,19 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
+            coupon = request.session.get("coupon_id")
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+
+            # Assign the coupon to the order
+            if coupon is not None:
+                code = Coupon.objects.get(pk=coupon)
+                order.coupon = code
+                request.session["coupon_id"] = None
+
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -128,6 +138,7 @@ def checkout(request):
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
+        discount = current_bag['discount']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -164,6 +175,8 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'coupon_form': coupon_form,
+        'discount': discount,
     }
 
     return render(request, template, context)
@@ -207,6 +220,7 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'discount': order.coupon.discount if order.coupon else None,
     }
 
     return render(request, template, context)
