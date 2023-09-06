@@ -37,6 +37,34 @@
                         </a>
                     </p>
                     {% endif %}
+            <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Add to Wishlist button -->
+                <div class="d-inline-flex justify-content-center">
+                    {% if wishlist is not None %}
+                    <!-- to check if the wishlist is not none - some users won't have a wishlist when account first made -->
+                    {% if wishlist %}
+                    <!-- if the wishlist exists and is not empty -->
+                    <span class="h6 pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
+                    <a href="{% url 'remove_wishlist' product.id %}"
+                        aria-label="Remove product from Wishlist">
+                        <div class="wishlist-icon"><i class="fas fa-heart"></i></div>
+                    </a>
+                    {% else %}
+                    <!-- if the wishlist exists and is empty -->
+                    <span class="pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
+                    <a href="{% url 'add_wishlist' product.id %}" aria-label="Add product to Wishlist">
+                        <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+                    </a>
+                    {% endif %}
+                    {% else %}
+                    <!-- if the wishlist doesn't exist -->
+                    <span class="pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
+                    <a href="{% url 'add_wishlist' product.id %}" aria-label="Add product to Wishlist">
+                        <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}

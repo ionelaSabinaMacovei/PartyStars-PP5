@@ -1,16 +1,19 @@
-"""wishlist models"""
 from django.db import models
+
+from django.contrib.auth.models import User
 from products.models import Product
-from profiles.models import UserProfile
+
+# Create your models here.
 
 
 class Wishlist(models.Model):
-    """ Wishlist model to store users favourite products"""
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE,
-                             related_name='user_wishlist',
-                             null=False, blank=False)
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, null=False, blank=False)
+    """A model for a user's wishlist"""
+
+    # multiple products allowed on 1 wishlist/1 product allowed on multiple wishlists
+    products = models.ManyToManyField(Product, blank=True)
+    # user associated with only 1 wishlist
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+    date_added = models.DateField(auto_now_add=True, blank=False, null=False)
 
     def __str__(self):
-        return self.product.name
+        return f"{self.user.username}'s Wishlist"
