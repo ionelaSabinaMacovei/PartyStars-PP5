@@ -3,9 +3,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.db.models import Avg
 
-from .models import Product, Category
-from .forms import ProductForm
+from profiles.models import UserProfile
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -64,11 +66,49 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.all().filter(product=product).order_by('-created_on')
+    review_count = len(reviews)
+
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            reviews.create(
+                user=user_profile,
+                product=product,
+                rating=request.POST.get('rating'),
+                body=request.POST.get('body')
+            )
+
+            reviews = Review.objects.all().filter(product=product)
+            rating = reviews.aggregate(Avg('rating'))['rating__avg']
+            product.rating = rating
+            product.review_count = review_count + 1
+            product.save()
+            messages.success(request, 'Review successfully added')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Failed to add review.\
+                    Please ensure the form is valid.')
+
+    else:
+        form = ReviewForm()
+        if request.user.is_authenticated:
+            reviewed = Review.objects.all().filter(
+                product=product).filter(user=user_profile.id)
+        else:
+            reviewed = False
 
     context = {
         'product': product,
+        'form': form,
+        'reviews': reviews,
+        'review_count': review_count,
+        'reviewed': reviewed,
     }
-
     return render(request, 'products/product_detail.html', context)
 
 
@@ -138,3 +178,64 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def edit_review(request, review_id):
+    """ Edit review"""
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+
+    if request.user.id != review.user.user.id:
+        messages.error(request, 'Sorry, you do not have access to that.')
+        return redirect(
+            reverse('product_detail', args=[product.id]))
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            reviews = Review.objects.all().filter(product=product)
+            rating = reviews.aggregate(Avg('rating'))['rating__avg']
+            product.rating = rating
+            product.save()
+            messages.success(request, 'Successfully updated review!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request,
+                "Failed to update review - please check form and try again")
+    else:
+        form = ReviewForm(instance=review)
+
+    messages.info(request, f"You are editing your review of {product}.")
+    template = 'products/product_detail.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete review """
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+
+    if request.user.id != review.user.user.id:
+        messages.error(request, 'Sorry, you do not have access to that.')
+        return redirect(
+            reverse('product_detail', args=[product.id]))
+
+    review.delete()
+    reviews = Review.objects.all().filter(product=product)
+    rating = reviews.aggregate(Avg('rating'))['rating__avg']
+    product.rating = rating
+    product.review_count -= 1
+    product.save()
+    messages.success(request, 'Review successfully deleted!')
+    return redirect(reverse('product_detail', args=[product.id]))
