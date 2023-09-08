@@ -1,0 +1,62 @@
+.fa-star,
+.fa-star-half,
+.fa-star-half-o{
+    color:#d7b500;
+    text-shadow: 0 0.5rem 1rem rgba(0,0,0,.15)!important;
+}
+.btn-color{
+    color: #fff;
+    background-color: #343a40;
+    border-color: #363c42;
+}
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: gold;
+    color: #252525;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+#myBtn:hover {
+    background-color: #555;
+    color: white;
+}
+.sale-new-label {
+    color: black;
+    box-shadow: 0 0 5px #222222;
+    background: gold;
+    width: fit-content;
+    padding: 4px 8px 2px;
+    top: -12px;
+    right: 40px;
+    position: absolute;
+    z-index: 1;
+    font-size: .8rem;
+}
+.lower-label {
+    top: 22px;
+}
+.category-table{
+    max-height: 450px;
+    overflow: auto;
+}
+.input-div-shopping:hover input{
+    color: white;
+}
+@media only screen and (max-width: 1300px) {
+    .sale-new-label {
+        right: 5px;
+   }
+}
+@media only screen and (max-width: 678px) {
+    .sale-new-label {
+        right: 10px;
+   }
+}

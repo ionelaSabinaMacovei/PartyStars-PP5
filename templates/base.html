@@ -72,6 +72,15 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    <div class="container">
+                                        <div class="row mt-4">
+                                            <div class="col text-center">
+                                                <a href="{% url 'add_category' %}">
+                                                    <div class="btn logo-font btn-style accounts-btns">
+                                                        <span><i class="fa-solid fa-list pr-2"></i></span>
+                                                        Category Managment
+                                                    </div>
+                                                </a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
