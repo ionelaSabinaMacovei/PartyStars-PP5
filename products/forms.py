@@ -15,7 +15,7 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ('discount', 'rating', 'review_count', 'sort_price')
 
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 

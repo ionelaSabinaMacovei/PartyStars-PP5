@@ -20,26 +20,51 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    new = None
+    sale = None
+    price = None
 
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
+
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+
+            if sortkey == 'rating':
+                if direction == 'desc':
+                    products = products.order_by(
+                        F(sortkey).desc(nulls_last=True)
+                    )
+                else:
+                    products = products.order_by(
+                        F(sortkey).asc(nulls_first=True)
+                    )
+            else:
+                if sortkey == 'name':
+                    sortkey = 'lower_name'
+                    products = products.annotate(lower_name=Lower('name'))
+                if sortkey == 'category':
+                    sortkey = 'category__name'
+
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
-            
+
+                products = products.order_by(sortkey)
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+        if 'new' in request.GET:
+            products = products.filter(is_new=True)
+            new = True
+
+        if 'on_sale' in request.GET:
+            products = products.filter(~Q(sale_price=price))
+            sale = True
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -57,6 +82,8 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'new': new,
+        'sale': sale,
     }
 
     return render(request, 'products/products.html', context)
@@ -123,6 +150,18 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
+            if product.sale_price and product.sale_price > 0:
+                product.discount = product.price - product.sale_price
+                if product.sale_price and product.sale_price > product.price:
+                    messages.error(
+                        request, 'Sale price must be lower\
+                             than current price!')
+                    return redirect(reverse('edit_product', args=[product.id]))
+
+            else:
+                product.sale_price = None
+
+            product.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -133,6 +172,7 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'on_page': True,
     }
 
     return render(request, template, context)
@@ -149,7 +189,18 @@ def edit_product(request, product_id):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
-            form.save()
+            product = form.save()
+            if product.sale_price and product.sale_price > 0:
+                product.discount = product.price - product.sale_price
+                if product.sale_price and product.sale_price > product.price:
+                    messages.error(
+                        request, 'Sale price must be lower\
+                             than current price!')
+                    return redirect(reverse('edit_product', args=[product.id]))
+            else:
+                product.discount = None
+
+            product.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -162,6 +213,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'on_page': True,
     }
 
     return render(request, template, context)

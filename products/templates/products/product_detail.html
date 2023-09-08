@@ -29,7 +29,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                    
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -39,32 +39,32 @@
                     {% endif %}
              
             <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Add to Wishlist button -->
-                <div class="d-inline-flex justify-content-center">
-                    {% if wishlist is not None %}
-                    <!-- to check if the wishlist is not none - some users won't have a wishlist when account first made -->
-                    {% if wishlist %}
-                    <!-- if the wishlist exists and is not empty -->
-                    <span class="h6 pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
-                    <a href="{% url 'remove_wishlist' product.id %}"
-                        aria-label="Remove product from Wishlist">
-                        <div class="wishlist-icon"><i class="fas fa-heart"></i></div>
-                    </a>
-                    {% else %}
-                    <!-- if the wishlist exists and is empty -->
-                    <span class="pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
-                    <a href="{% url 'add_wishlist' product.id %}" aria-label="Add product to Wishlist">
-                        <div class="wishlist-icon"><i class="far fa-heart"></i></div>
-                    </a>
-                    {% endif %}
-                    {% else %}
-                    <!-- if the wishlist doesn't exist -->
-                    <span class="pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
-                    <a href="{% url 'add_wishlist' product.id %}" aria-label="Add product to Wishlist">
-                        <div class="wishlist-icon"><i class="far fa-heart"></i></div>
-                    </a>
-                    {% endif %}
-                </div>
+                            <!-- Add to Wishlist button -->
+                            <div class="d-inline-flex justify-content-center">
+                                {% if wishlist is not None %}
+                                <!-- to check if the wishlist is not none - some users won't have a wishlist when account first made -->
+                                {% if wishlist %}
+                                <!-- if the wishlist exists and is not empty -->
+                                <span class="h6 pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
+                                <a href="{% url 'remove_wishlist' product.id %}"
+                                    aria-label="Remove product from Wishlist">
+                                    <div class="wishlist-icon"><i class="fas fa-heart"></i></div>
+                                </a>
+                                {% else %}
+                                <!-- if the wishlist exists and is empty -->
+                                <span class="pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
+                                <a href="{% url 'add_wishlist' product.id %}" aria-label="Add product to Wishlist">
+                                    <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+                                </a>
+                                {% endif %}
+                                {% else %}
+                                <!-- if the wishlist doesn't exist -->
+                                <span class="pr-4 d-flex text-black font-weight-bold">Wishlist: </span>
+                                <a href="{% url 'add_wishlist' product.id %}" aria-label="Add product to Wishlist">
+                                    <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+                                </a>
+                                {% endif %}
+                            </div>
             </div>
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
@@ -74,9 +74,18 @@
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
-                    {% if book.review_count > 0 %}
-                    <p class="ml-3 small d-inline">({{ book.review_count}})</p>
+                    {% if product.review_count > 0 %}
+                    <p class="ml-3 small d-inline">({{ product.review_count}})</p>
                     {% endif %}
+
+                    {% if product.sale_price %}
+                    <p class="mr-1 mb-0"><del class="text-muted">€{{ product.price }} </del></p>
+                    <p class="lead font-weight-bold">€{{ product.sort_price }}</p>
+                    {% else %}
+    
+                    <p class=" lead font-weight-bold">€{{ product.sort_price }}</p>
+                    {% endif %}
+    
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a href="{% url 'edit_product' product.id %}">Edit</a> | 
