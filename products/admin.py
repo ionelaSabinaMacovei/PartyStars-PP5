@@ -23,6 +23,8 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
+    search_fields = ('friendly_name', 'name',)
+
 
 class ReviewAdmin(admin.ModelAdmin):
     """review model display"""
