@@ -25,12 +25,12 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <form action="{% url 'create_cupon' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
+            <form action="{% url 'create_coupon' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy}}
                 <div class="text-right">
-                    <a href="{% url 'create_cupon' %}" class="btn logo-font btn-style rounded">Cancel</a>
-                    <button class="btn logo-font btn-style rounded" type="submit">Add FAQ</button>
+                    <a href="{% url 'create_coupon' %}" class="btn logo-font btn-style rounded">Cancel</a>
+                    <button class="btn logo-font btn-style rounded" type="submit">Add Coupon</button>
 
                 </div>
             </form>
@@ -41,31 +41,35 @@
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr class="border-bottom">
-                            <th>Question</th>
+                            <th>Coupon</th>
                             <th>Status</th>
                             <th></th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        {% for coupon in coupons %}
+                        {% for coupon in coupon %}
                         <tr class="border-top">
                             <td>
-                                <p>{{ coupon.coupon}}</p>
+                                <p>{{ coupon.code }}</p>
+                            </td>
+                            <td>
+                                {% if coupon.active == 0 %}
+                                <p>Inactive</p>
+                                {% else %}
+                                <p>Active</p>
+                                {% endif %}
                             </td>
                             <td>
                                 <div class="logo-font">
 
-                                    <!--<a href="{% url 'edit_faq' question.id %}"
-                                        class="text-success d-inline btn p-0 btn-small">Edit</a>
-
                                     <button class="btn logo-font text-danger p-0 d-inline btn-sm" data-toggle="modal"
-                                        data-target="#deleteFAQ{{question.id}}">Delete</button>
-                                    <!-- Modal 
+                                        data-target="#deleteModal{{ coupon.id}}">Delete</button>
+                                    <!-- Modal -->
 
                                 </div>
 
-                                {% include 'questions/includes/delete_faq_modal.html' %}
+                                {% include 'checkout/includes/delete_coupon_modal.html' %}
                             </td>
                         </tr>
                         {% endfor %}
@@ -77,10 +81,8 @@
     <div class="row">
         <div class="col-12 col-md-6 text-right mt-2 mb-5">
             <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Back to Admin Panel</a>
-            <a href="{% url 'faq_page' %}" class="btn logo-font btn-style rounded">FAQ's</a>
         </div>
     </div>
-</div>-->
-
+</div>
 
 {% endblock %}

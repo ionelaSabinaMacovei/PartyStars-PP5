@@ -28,18 +28,6 @@ def get_coupon(request, code):
         return redirect("checkout")
 
 
-def coupon_page(request):
-    """ Coupon page view"""
-
-    coupon = Coupon.objects.all().filter(status=1)
-    context = {
-        'coupon': coupon
-    }
-    template = 'checkout/coupon.html'
-
-    return render(request, template, context)
-
-
 def delete_coupon(request, coupon_id):
     """ Delete Coupon"""
     if not request.user.is_superuser:
@@ -49,7 +37,7 @@ def delete_coupon(request, coupon_id):
     coupon.delete()
     messages.success(request, 'Coupon deleted')
 
-    return redirect(reverse('create_cupon'))
+    return redirect(reverse('create_coupon'))
 
 
 def create_coupon(request):
