@@ -28,6 +28,59 @@ def get_coupon(request, code):
         return redirect("checkout")
 
 
+def coupon_page(request):
+    """ Coupon page view"""
+
+    coupon = Coupon.objects.all().filter(status=1)
+    context = {
+        'coupon': coupon
+    }
+    template = 'checkout/coupon.html'
+
+    return render(request, template, context)
+
+
+def delete_coupon(request, coupon_id):
+    """ Delete Coupon"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+    coupon = get_object_or_404(Coupon, pk=coupon_id)
+    coupon.delete()
+    messages.success(request, 'Coupon deleted')
+
+    return redirect(reverse('create_cupon'))
+
+
+def create_coupon(request):
+    """ Form for create a cupon """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+
+    coupon = Coupon.objects.all()
+
+    if request.method == 'POST':
+        form = CouponForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added Coupon!')
+            return redirect(reverse('create_coupon'))
+        else:
+            messages.error(
+                request, 'Failed to add Coupon. Please ensure the form is valid.')
+    else:
+        form = CouponForm()
+    template = 'checkout/create_coupon.html'
+    context = {
+        'form': form,
+        'coupon': coupon,
+        'on_page': True
+    }
+    return render(request, template, context)
+
+
 def add_coupon(request):
     """Allow a user to add the coupon code"""
 

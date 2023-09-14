@@ -2,7 +2,7 @@ from django import forms
 from .models import Order, Coupon
 
 
-class CouponForm(forms.Form):
+class CouponForm(forms.ModelForm):
     code = forms.CharField(
         widget=forms.TextInput(
             attrs={
@@ -11,6 +11,10 @@ class CouponForm(forms.Form):
             }
         )
     )
+    class Meta:
+        """ faq form"""
+        model = Coupon
+        fields = '__all__'
 
 
 class OrderForm(forms.ModelForm):

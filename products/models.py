@@ -56,7 +56,6 @@ class Product(models.Model):
     is_new = models.BooleanField(default=True)
     sort_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     
-
     def clean(self):
         if self.price < 0:
             raise ValidationError("Price cannot be negative.")
