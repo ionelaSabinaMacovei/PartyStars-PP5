@@ -21,16 +21,27 @@ def bag_contents(request):
         coupon = None
 
     for item_id, quantity in bag.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.sort_price
-        product_count += quantity
-        bag_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-        })
+        if isinstance(quantity, int):
+            product = get_object_or_404(Product, pk=item_id)
 
-    if total != 0 and total < settings.FREE_DELIVERY_THRESHOLD:
+            # If product is on sale, show sale price
+            if product.discount:
+                price = product.sale_price
+            else:
+                price = product.price
+
+            total += quantity * price
+            product_count += quantity
+            bag_items.append(
+                {
+                    "item_id": item_id,
+                    "quantity": quantity,
+                    "product": product,
+                    "price": price,
+                }
+            )
+
+    if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
@@ -45,19 +56,20 @@ def bag_contents(request):
         discount = 0
         grand_total = delivery + total
         stripe_total = round(grand_total * 100)
-    
-    grand_total = delivery + total
-    
+
+    sub_total = total + delivery
+
     context = {
-        'bag_items': bag_items,
-        'coupon': coupon,
-        'discount': discount,
-        'total': total,
-        'product_count': product_count,
-        'delivery': delivery,
-        'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
-        'grand_total': grand_total,
+        "bag_items": bag_items,
+        "coupon": coupon,
+        "discount": discount,
+        "total": total,
+        "sub_total": sub_total,
+        "product_count": product_count,
+        "delivery": delivery,
+        "free_delivery_delta": free_delivery_delta,
+        "free_delivery_threshold": settings.FREE_DELIVERY_THRESHOLD,
+        "grand_total": grand_total,
     }
 
     return context
