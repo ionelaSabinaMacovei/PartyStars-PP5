@@ -41,8 +41,7 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img src="{{ MEDIA_URL }}ballons.png"  alt="party stars logo" class="img-fluid hero-image"
-                    >
+                    Party Stars
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -149,6 +148,37 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="w-100 mt-auto text-center pb-4">
+        <div class="footer">
+            <div id="button"></div>
+          <div id="container">
+          <div id="cont">
+          <div class="footer_center">
+                 <div class="row">
+                <div class=" col-sm-12 col-md-4">
+                    <!-- Help Section -->
+                    <div >
+                        <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
+                    </div>
+                    <div><a href="{% url 'faq_page' %}" class="footer-link">FAQ's</a>
+                    </div>
+                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#ShippingModal">Shipping
+                            Info</a>
+                    </div>
+                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#PolicyModal">Privacy
+                            Policy</a>
+
+
+                    </div>
+
+
+                </div>
+          </div>
+          </div>
+          </div>
+          </div>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
