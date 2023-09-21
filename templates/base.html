@@ -149,35 +149,14 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="w-100 mt-auto text-center pb-4">
-        <div class="footer">
-            <div id="button"></div>
-          <div id="container">
-          <div id="cont">
-          <div class="footer_center">
-                 <div class="row">
-                <div class=" col-sm-12 col-md-4">
-                    <!-- Help Section -->
-                    <div >
-                        <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
-                    </div>
-                    <div><a href="{% url 'faq_page' %}" class="footer-link">FAQ's</a>
-                    </div>
-                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#ShippingModal">Shipping
-                            Info</a>
-                    </div>
-                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#PolicyModal">Privacy
-                            Policy</a>
-
-
-                    </div>
-
-
-                </div>
-          </div>
-          </div>
-          </div>
-          </div>
+    <footer>
+        <div class="w-100 text-center">
+            <div class="col text-center">
+            <!-- Social Media links -->
+            
+            </div>
+            <img src="{{ MEDIA_URL }}footer-wave1.png" alt="footer wave background" class="mx-auto footer-img">
+        </div>
     </footer>
 
     {% block postloadjs %}
