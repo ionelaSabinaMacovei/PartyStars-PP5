@@ -1,22 +1,67 @@
 html {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
-body {
-    background: url('/media/b-background.png') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
-}
 
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    font-family: var(--main-font);
 }
 
+/* carousel */
+/* Declare heights because of positioning of img element */
+.carousel-title {
+    background-color: rgb(128, 128, 128, 0.5);
+  }
+  
+  .carousel-item {
+    height: 65vh;
+  }
+  
+  .carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 65vh;
+  }
+  
+  .carousel-control-prev ,
+  .carousel-control-next  {
+    margin-top: 250px;
+    background-color: var(--white);
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color:var(--white)!important;
+  }
+  
+  .bg-img-1 {
+    background: url('/media/background-ballons.png') center/cover no-repeat;
+  }
+  
+  .bg-img-2 {
+    background: url("/media/b-background.png") center/cover no-repeat;
+  }
+  
+  .bg-img-3 {
+    background: url('/media/background2.png') center/cover no-repeat;
+  }
 
 /* Footer */
 footer {
