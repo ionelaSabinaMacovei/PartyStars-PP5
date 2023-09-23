@@ -26,18 +26,20 @@ body {
     left: 0;
     min-width: 100%;
     height: 65vh;
+    
+    
   }
   
   .carousel-control-prev ,
   .carousel-control-next  {
     margin-top: 250px;
-    background-color: var(--white);
+    background-color: white;
     margin-left: 30px;
     margin-right: 30px;
     width: 40px;
     height: 40px;
     border: none;
-    color: var(--black);
+    color: black;
     font-weight: bold;
     font-size: 20px;
     line-height: 40px;
@@ -52,15 +54,16 @@ body {
   }
   
   .bg-img-1 {
-    background: url('/media/background-ballons.png') center/cover no-repeat;
+    background: url('/media/carousel1.jpg') center/cover no-repeat;
+
   }
   
   .bg-img-2 {
-    background: url("/media/b-background.png") center/cover no-repeat;
+    background: url("/media/carousel2.jpg") center/cover no-repeat;
   }
   
   .bg-img-3 {
-    background: url('/media/background2.png') center/cover no-repeat;
+    background: url('/media/carousel3.jpg') center/cover no-repeat;
   }
 
 /* Footer */
