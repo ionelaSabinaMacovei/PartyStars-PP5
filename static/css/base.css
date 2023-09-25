@@ -8,16 +8,68 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgb(201, 237, 247);
+}
+
+/* NAVBAR */
+.navbar{
+    background-color: var(--main-nav-color);
+}
+.dropdown-menu{
+    background-color: whitesmoke;
+    border: 1px solid rgb(228, 226, 226) 
+}
+.navbar-brand,
+.modal-title {
+    color: #139035;
+    text-decoration: overline;
+    font-weight: 600;
+    font-family: 'Playfair Display', sans-serif;
+    letter-spacing: 1px;
+}
+.navbar-brand:hover{
+    color: darkgreen;
+    text-decoration: overline;
+}
+.navbar-collapse{
+    width: 100%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+.nav-bar-links{
+    display: flex;
+    flex-basis: auto;
+    width: 100%;
+}
+.nav-link, .nav-link > a,
+.dropdown-menu > a{
+    color: black ;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding-top: 8px;
+}
+.nav-link:hover{
+    color: rgb(59, 59, 59);
+}
+
+.navbar-toggler-icon > i {
+    color: black;
+    font-size: 2.3rem;
+}
+.dropdown-toggle::after {
+    content: none;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem!important;
+    letter-spacing: 1px;
 }
 
 /* carousel */
 /* Declare heights because of positioning of img element */
-.carousel-title {
-    background-color: rgb(128, 128, 128, 0.5);
-  }
+
   
   .carousel-item {
-    height: 75vh;
+    height: 95vh;
   
   }
   

@@ -1,70 +1,63 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
 <!-- carousel -->
-<div class="container-fluid bg-dark p-0">
-    <div id="carouselExampleIndicators" class="carousel slide carousel-dark  carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item  bg-img-1  active">
 
-                <div class="carousel-caption d-flex flex-column align-items-start mb-2">
-                    <h1 class="text-white fw-bold hero mb-3">Luxury Ballon Shop</h1>
-                    <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 "><span class="h3">Shop Now</span></a>
+            <div class="container-fluid p-0">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item  bg-img-1  active">
+
+                            <div class="carousel-caption d-flex flex-column align-items-start mb-2">
+                                <h1 class="text-white fw-bold hero mb-3">Luxury Ballon Shop</h1>
+                                <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 "><span class="h3">Shop Now</span></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item  bg-img-2 ">
+
+                            <div class="carousel-caption d-flex flex-column align-items-start mb-2">
+
+                                <h1 class="text-white fw-bold hero mb-3">Luxury Ballon Shop</h1>
+                                <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 "><span class="h3">Shop Now</span></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item  bg-img-3 ">
+
+                            <div class="carousel-caption d-flex flex-column align-items-start mb-2">
+
+                                <h1 class="text-white fw-bold hero mb-3">Luxury Ballon Shop</h1>
+                                <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 "><span class="h3">Shop Now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="icon-prev" aria-hidden="true"></span>
+                            <i class="fas fa-arrow-left"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="icon-next" aria-hidden="true"></span>
+                            <i class="fas fa-arrow-right"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-            <div class="carousel-item  bg-img-2 ">
+            <!-- carousel -->
 
-                <div class="carousel-caption d-flex flex-column align-items-start mb-2">
 
-                    <h1 class="text-white fw-bold hero mb-3">Luxury Ballon Shop</h1>
-                    <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 "><span class="h3">Shop Now</span></a>
-                </div>
-            </div>
-            <div class="carousel-item  bg-img-3 ">
-
-                <div class="carousel-caption d-flex flex-column align-items-start mb-2">
-
-                    <h1 class="text-white fw-bold hero mb-3">Luxury Ballon Shop</h1>
-                    <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 "><span class="h3">Shop Now</span></a>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="icon-prev" aria-hidden="true"></span>
-                <i class="fas fa-arrow-left"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="icon-next" aria-hidden="true"></span>
-                <i class="fas fa-arrow-right"></i>
-            <span class="sr-only">Next</span>
-          </a>
-    </div>
-</div>
-<!-- carousel -->
-
-<div class="container-fluid text-center bg-dark">
-    <h2 class="fw-bold text-white p-4">Best Sellers</h2>
-        <div class="row ">
-            <div class="col-sm-4 my-2">
-                <img src="{{ MEDIA_URL }}kids-party-ballon9 (1).png" alt="" class="img-fluid " >
-
-            </div>
-            <div class="col-sm-4 my-2">
-                <img src="{{ MEDIA_URL }}wedding-ballon4 (1).png" alt="" class="img-fluid " >
-
-            </div>
-            <div class="col-sm-4 my-2">
-                <img src="{{ MEDIA_URL }}baby-ballon6 (1).png" alt="" class="img-fluid" >
-
-            </div>
-        </div>
 
 {% endblock %}
