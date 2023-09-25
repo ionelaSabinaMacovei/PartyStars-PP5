@@ -8,12 +8,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(201, 237, 247);
+    
 }
 
 /* NAVBAR */
 .navbar{
-    background-color: var(--main-nav-color);
+ 
 }
 .dropdown-menu{
     background-color: whitesmoke;
