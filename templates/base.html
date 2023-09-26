@@ -44,7 +44,7 @@
                 <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>                
             </div>            
         </div>
-        <nav class="navbar navbar-expand-lg d-none d-lg-flex">
+        <nav class="navbar navbar-expand-lg d-none d-lg-flex bg-white">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <img src="{{ MEDIA_URL }}logo4.png" alt="Brand-logo" class="img-fluid d-none d-md-block">
                 </a>
@@ -195,7 +195,70 @@
     {% block content %}
     {% endblock %}
 
-    <footer>
+    <footer class="w-100 mt-auto text-center pb-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-sm-12 col-md-4">
+                    <!-- Help Section -->
+                    <div class="footer-header mt-4">
+                        <h6 class="text-uppercase mb-4"><strong>Help</strong></h6>
+                    </div>
+                    <div><a href="#" class="footer-link">FAQ's</a>
+                    </div>
+                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#ShippingModal">Shipping
+                            Info</a>
+                    </div>
+                    <div><a href="#" class="footer-link" data-toggle="modal" data-target="#PolicyModal">Privacy
+                            Policy</a>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <!-- Subscribe -->
+                    <div class="footer-header mt-4">
+                        <h6 class="text-uppercase mb-4"><strong>Subscribe</strong></h6>
+                    </div>
+                    <p>Subscribe to the JoyfulBookstore mailing list to get exclusive offers straight
+                        to
+                        your inbox!</p>
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        {{ subscribe_form | crispy }}
+                        <input type="submit" class=" btn-style submit btn mt-2 d-block" value="Subscribe">
+                    </form>
+
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="footer-header mt-4">
+                        <!-- Contact Us Section -->
+                        <h6 class="text-uppercase mb-4"><strong>Contact Us</strong></h6>
+                    </div>
+                    <div>
+                        <a href="#" class="footer-link">Get in Touch</a>
+                    </div>
+                    <h6 class="text-uppercase">Follow Us</h6>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-link">
+                        <i class="fa-brands fa-instagram footer-links fa-lg"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                        class="footer-link">
+                        <i class="fa-brands fa-facebook-f fa-lg"></i>
+                    </a>
+                    <div>
+                        <!-- Copyright -->
+                        <div class="copyright">
+                            <i class="fa-regular fa-copyright text-white"></i>
+                            <p class="d-inline text-white">PartyStars, 2023</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
     </footer>
 
