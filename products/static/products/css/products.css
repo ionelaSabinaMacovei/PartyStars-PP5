@@ -1,3 +1,21 @@
+.product-img{
+    height: 270px;
+    width: 250px;
+}
+
+.product-details-img{
+    max-width: 500px;
+    max-height: 550px;
+}
+
+.wishlist-icon{
+    color:red
+}
+
+.wishlist-icon:hover{
+    color:black
+}
+
 .fa-star,
 .fa-star-half,
 .fa-star-half-o{

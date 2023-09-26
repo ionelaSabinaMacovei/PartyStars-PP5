@@ -70,16 +70,16 @@
                                 {% endif %}
 
                                 {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <a href="{% url 'product_detail' product.id %}" class="text-center">
+                                    <img class="card-img-top img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid product-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="mb-0 lead font-weight-bold">{{ product.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
@@ -103,7 +103,7 @@
                                             {% if product.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <small class="text-muted">No Rating |</small>
                                             {% endif %}
                                             {% if product.review_count > 0 %}
                                             <p class="ml-3 small d-inline">({{ product.review_count}})</p>
@@ -112,12 +112,25 @@
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                             <small class="ml-3">
-                                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                <a href="{% url 'edit_product' product.id %}" class="text-success btn btn-small border-0 text-uppercase">Edit</a> | 
                                                 <button class="bg-light btn-sm p-0 logo-font text-danger border-0 "
                                                     data-toggle="modal" data-target="#product-modal-{{product.id}}">Delete</button>
                                             </small>
                                             {% include 'products/includes/delete_product_modal.html' %}
                                             {% endif %}
+                                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                                            {% csrf_token %}
+                                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                            <button type="submit" class=" btn border-secondary
+                                                                rounded-pill btn-style w-100   btn-outline-black text-white" name="quantity" value="1">Add to bag</button>
+                                                        </form>
+                    
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
