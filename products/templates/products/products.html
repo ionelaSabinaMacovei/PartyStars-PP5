@@ -99,16 +99,7 @@
                                                 </a>
                                             </p>
                                             {% endif %}
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating |</small>
-                                            {% endif %}
-                                            {% if product.review_count > 0 %}
-                                            <p class="ml-3 small d-inline">({{ product.review_count}})</p>
-                                            {% else %}
-                                                <small class="text-muted">No Reviews</small>
-                                            {% endif %}
+
                                             {% if request.user.is_superuser %}
                                             <small class="ml-3">
                                                 <a href="{% url 'edit_product' product.id %}" class="text-success btn btn-small border-0 text-uppercase">Edit</a> | 
@@ -124,7 +115,7 @@
                                                             {% csrf_token %}
                                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                                             <button type="submit" class=" btn border-secondary
-                                                                rounded-pill btn-style w-100   btn-outline-black text-white" name="quantity" value="1">Add to bag</button>
+                                                                rounded-pill btn-style w-100   btn-outline-black text-white" name="quantity" value="1"><i class="fa-solid fa-cart-shopping"></i>Add to bag</button>
                                                         </form>
                     
                                                     </div>
