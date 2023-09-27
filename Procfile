@@ -1,1 +1,1 @@
-web: gunicorn partystars-pp5.wsgi:application
+web: gunicorn party_stars.wsgi:application
