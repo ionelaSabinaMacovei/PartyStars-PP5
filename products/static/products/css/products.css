@@ -16,6 +16,15 @@
     color:black
 }
 
+
+
+
+.product-name:hover{
+    text-decoration: none;
+    text-decoration-color:gray;
+
+}
+
 .fa-star,
 .fa-star-half,
 .fa-star-half-o{

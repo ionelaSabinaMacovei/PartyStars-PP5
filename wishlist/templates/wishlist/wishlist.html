@@ -30,13 +30,13 @@
             <div class="text-center">
                 <div data-label="Product:" class="mb-3">
                     {% if product.image %}
-                    <img class="img-fluid rounded w-50" src="{{ product.image.url }}" alt="{{ product.title }}">
+                    <img class="img-fluid rounded w-50" src="{{ product.image.url }}" alt="{{ product.name }}">
                     {% else %}
-                    <img class="img-fluid rounded w-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
+                    <img class="img-fluid rounded w-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     {% endif %}
                 </div>
                 <div data-label="Name:" class="mb-3">
-                    <p class="h6">{{ product.title }}</p>
+                    <p class="h6">{{ product.name }}</p>
                 </div>
                 <div data-label="Price:" class="mb-3">
                     <div>
@@ -87,16 +87,16 @@
                     <!-- for each product in the wishlist -->
                     {% for product in wishlist.products.all %}
                     <tr class="wishlist-table">
-                        <td class="wishlist-title" data-label="Product:">
+                        <td class="wishlist-img" data-label="Product:">
                             {% if product.image %}
-                            <img class="img-fluid rounded w-50" src="{{ product.image.url }}" alt="{{ product.title }}">
+                            <img class="img-fluid rounded " src="{{ product.image.url }}" alt="{{ product.name }}">
                             {% else %}
-                            <img class="img-fluid rounded w-50" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ product.title }}">
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}">
                             {% endif %}
                         </td>
                         <td class="wishlist-title" data-label="Name:">
-                            <p class="h6">{{ product.title }}</p>
+                            <p class="h6">{{ product.name }}</p>
                         </td>
                         <td class="wishlist-title" data-label="Price:">
                             <div>
