@@ -212,10 +212,10 @@
                             Info</a>
                     </div>
                     <div><a href="#" class="footer-link" data-toggle="modal" data-target="#PolicyModal">Privacy
-                            Policy</a>
+                        Policy</a>
 
 
-                    </div>
+                </div>
 
 
                 </div>
@@ -254,12 +254,12 @@
                 <div class="col-sm-12 col-md-4">
                     <div class="footer-header mt-4">
                         <!-- Contact Us Section -->
-                        <h6 class="text-uppercase"><strong>Contact Us</strong></h6>
+                        <h6 class="text-uppercase"><strong>Contact</strong></h6>
                     </div>
                     <div>
-                        <a href="#" class="footer-link">Get in Touch</a>
+                        <a href="{% url 'contact' %}" class="footer-link">Contact Us</a>
                     </div>
-                    <h6 class="text-uppercase">Follow Us</h6>
+                    <h3 class="">Follow Us:</h3>
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-link">
                         <i class="fa-brands fa-instagram footer-links fa-lg"></i>
                     </a>
@@ -280,7 +280,8 @@
                 </div>
             </div>
         </div>
-
+        {% include 'includes/shipping_info.html' %}
+        {% include 'includes/privacy_policy_modal.html' %}
     </footer>
 
     {% block postloadjs %}

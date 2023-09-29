@@ -83,6 +83,42 @@ footer h6{
     color: white;
 }
 
+/* Modal */
+.modal-header {
+    background-color: #c7c7c7;
+    border: none;
+    letter-spacing: 2px;
+}
+.modal-header .close{
+    margin: -2rem -1.5rem -1.5rem auto;
+    background-color: black;
+    padding: 2px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 
+}
+.modal-header .close:hover{
+    background-color: beige;
+    color: black;
+}
+.close{
+    opacity: 1!important;
+}
+.home{
+    background-color: #00000070;
+}
+.home p{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+}
+.home p:nth-child(2){
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+}
+
 /* carousel */
 /* Declare heights because of positioning of img element */
 

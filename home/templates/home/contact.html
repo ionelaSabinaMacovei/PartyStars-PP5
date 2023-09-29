@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | ContactUs{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="col d-flex flex-column align-items-center mt-3">
+        <h2 class="title-font">Contact Us</h2>
+        <hr class="w-50 text-center mb-1">
+
+    </div>
+   
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact m-3">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+                        <i class="fas fa-map"></i>
+                        <h3>Our Address</h3>
+                        <p>Corbally,
+                            Limerick,
+                            Co. Clare</p>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-item d-flex flex-column justify-content-center align-items-center">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>sabina.i.macovei@gmail.com</p>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p>+353 123 456789</p>
+                    </div>
+                </div><!-- End Info Item -->
+
+            </div>
+
+            <!-- Contact Form -->
+
+</div>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <div class="row content-center">
+        <div class="col d-flex flex-column align-items-center mt-3">
+            <h2 class="title-font">Get in Touch</h2>
+            <hr class="w-50 text-center mb-1">
+    
+        </div>
+        </div>
+        <div class="col-sm-8 mt-4 align-items-center justify-content-center">
+            <form action="{% url 'contact' %}" method="POST">
+                <!-- Contact Form -->
+                {% csrf_token %}
+                <div class="form-group d-flex flex-column justify-content-center align-items-center">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control " name="message-email"
+                        placeholder="name@example.com" required>
+                </div>
+                <div class="form-group d-flex flex-column justify-content-center align-items-center">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" name="message-name" minlength="3"
+                        placeholder="Your Name" required>
+                </div>
+                <div class="form-group d-flex flex-column justify-content-center align-items-center">
+                    <label for="message">Your message</label>
+                    <textarea class="form-control" id="message" name="message" minlength="10" rows="10"
+                        required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn border-secondary
+                    rounded-pill btn-style  btn-outline-black text-white">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
