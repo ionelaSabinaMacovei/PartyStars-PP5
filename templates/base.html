@@ -261,6 +261,9 @@
                     <div>
                         <a href="{% url 'contact' %}" class="footer-link">Contact Us</a>
                     </div>
+                    <div>
+                        <a href="#" class="footer-link" data-toggle="modal" data-target="#AboutModal">About Us</a>
+                    </div>
                     <h3 class="">Follow Us:</h3>
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-link">
                         <i class="fa-brands fa-instagram footer-links fa-lg"></i>
@@ -284,6 +287,7 @@
         </div>
         {% include 'includes/shipping_info.html' %}
         {% include 'includes/privacy_policy_modal.html' %}
+        {% include 'includes/about.html' %}
     </footer>
 
     {% block postloadjs %}
