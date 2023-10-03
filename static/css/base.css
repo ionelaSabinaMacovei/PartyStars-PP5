@@ -219,21 +219,22 @@ body {
 /* Footer */
 
 footer{
-    background-color: dimgray;
+    background-color: #F4E9E5;
     border-top: 2px solid #504e4e;
 }
 footer h6{
-    color: black;
+    color:  #4F3022;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1.5px;
 }
 .footer-link{
-    color: var(--main-nav-color);
+    color:  #4F3022;
 }
 .footer-link:hover{
-    color: white;
+    color: #9e9a9a;
+    text-decoration: none;
 }
 
 footer {
@@ -249,15 +250,6 @@ footer {
     overflow: hidden;
 }
 
-.footer-img {
-    width: 100%;
-    height: 200px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    overflow: hidden;
-}
 
 /* Footer icons */
 .social {
@@ -272,6 +264,21 @@ footer {
     height: 1.5rem;
     margin: 1rem;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.account-card {
+    border-radius: 30px;
+    background: #FAF6F4;
+    box-shadow: 5px 5px 7px #b4b0af,
+                -5px -5px 7px #ffffff;
+    padding: 15px 5px 20px 5px;
+    align-items: center;
+    
+}
+
+.allauth-form-inner-content{
+    align-items: center;
+   
 }
 
 /* Wishlist page */
@@ -478,8 +485,8 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content input {
-    border-color: #000;
-    border-radius: 0;
+    margin:auto;
+    width:75%;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -488,36 +495,6 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content input::placeholder {
     color: #aab7c4;
-}
-
-.allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0;
-
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-.allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
 }
 
 .allauth-form-inner-content a {
