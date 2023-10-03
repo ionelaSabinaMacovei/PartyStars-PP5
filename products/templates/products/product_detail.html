@@ -32,8 +32,8 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0 text-left font-weight-bold">{{ product.name }}</p>
-                    
+                    <p class="mb-0 text-left font-weight-bold text-black">{{ product.name }}</p>
+
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -43,7 +43,7 @@
                     {% endif %}
 
                     {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                        <small class="text-muted"><i class="fas fa-star mr-1">Rating:</i>{{ product.rating }} / 5</small>
                         <a href="#reviews-section" class="text-decoration-none">
                             <div class="product-rating d-inline">{% include 'products/includes/product_rating.html' %}</div>
                         </a>
@@ -54,17 +54,21 @@
                     <p class="ml-3 small d-inline">({{ product.review_count}})</p>
                     {% endif %}
 
-                    {% if product.sale_price %}
-                    <p class="mr-1 mb-0"><del class="text-muted">€{{ product.price }} </del></p>
-                    <p class="lead font-weight-bold">€{{ product.sort_price }}</p>
-                    {% else %}
-    
-                    <p class=" lead font-weight-bold">€{{ product.sort_price }}</p>
-                    {% endif %}
+                    <!-- Product details -->
+                    <p class="mt-5 description-text text-black"><strong>Description:</strong><p>{{ product.description }}</p>
+                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                        {% csrf_token %}
 
-                    
-                        <!-- Add to Wishlist button -->
-                        <div class="d-inline-flex justify-content-center">
+                        {% if product.sale_price %}
+                        <p class="mr-1 mb-0"><del class="text-muted text-black">€{{ product.price }} </del></p>
+                        <p class="lead font-weight-bold text-black">€{{ product.sort_price }}</p>
+                        {% else %}
+        
+                        <p class=" lead font-weight-bold text-black">€{{ product.sort_price }}</p>
+                        {% endif %}
+
+                             <!-- Add to Wishlist button -->
+                            <div class="d-inline-flex justify-content-center">
                             {% if wishlist is not None %}
                             <!-- to check if the wishlist is not none - some users won't have a wishlist when account first made -->
                             {% if wishlist %}
@@ -88,26 +92,11 @@
                                 <div class="wishlist-icon"><i class="far fa-heart"></i></div>
                             </a>
                             {% endif %}
-                        </div>
-                    
+                            </div>
     
-                    {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}" class="text-success text-uppercas">Edit</a> | 
-                        <button class="bg-light btn-sm p-0 logo-font text-danger border-0 text-uppercas text-danger"
-                        data-toggle="modal" data-target="#product-modal-{{product.id}}">Delete</button>
-                    </small>
-                    {% include 'products/includes/delete_product_modal.html' %}
-                   
-                    {% endif %}
-
-                     <!-- Product details -->
-                     <p class="mt-5 description-text"><strong>Description:</strong><p>{{ product.description }}</p>
-                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                        {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <p class="mt-3 text-black"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -135,17 +124,26 @@
                             </div>
 
                             <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
+                                <a href="{% url 'products' %}" class="btn btn-lg btn-light px-5 mb-3 rounded-pill">
+                                    <i class="fas fa-chevron-left"></i>Keep Shopping
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                <input type="submit" class="btn btn-lg btn-light px-5 mb-3 rounded-pill" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
+        
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_product' product.id %}" class="text-success text-uppercase">Edit</a> | 
+                        <button class="bg-light btn-sm p-0 logo-font text-danger border-0 text-uppercas text-danger"
+                        data-toggle="modal" data-target="#product-modal-{{product.id}}">Delete</button>
+                    </small>
+                    {% include 'products/includes/delete_product_modal.html' %}
+                   
+                    {% endif %}
+
+
                 </div>
             </div>
         </div>

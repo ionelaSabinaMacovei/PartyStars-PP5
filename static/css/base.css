@@ -13,16 +13,28 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Comic Neue', cursive;
-    
 }
 
+.home-page-btn{
+    background-color: #F4E9E5;
+}
 
 .header-container {
     padding-top: 116px;
 }
 
-/* Mailchimp */
+/* Products page */
 
+.product-img {
+  
+    width: 600px;
+}
+
+/* Products page */
+
+.product-details-img{
+    border-radius: 15px;
+}
 
 /* NAVBAR */
 .navbar{
@@ -43,7 +55,7 @@ body {
 }
 .nav-link, .nav-link > a,
 .dropdown-menu > a{
-    color: black ;
+    color: #4F3022 ;
     font-size: 1.2rem;
     padding-top: 8px;
     font-family: 'Comic Neue', cursive;
@@ -67,23 +79,7 @@ body {
     letter-spacing: 1px;
 }
 
-footer{
-    background-color: dimgray;
-    border-top: 2px solid #504e4e;
-}
-footer h6{
-    color: black;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-}
-.footer-link{
-    color: var(--main-nav-color);
-}
-.footer-link:hover{
-    color: white;
-}
+
 
 /* Toasts */
 .message-container{
@@ -221,6 +217,25 @@ footer h6{
 
 
 /* Footer */
+
+footer{
+    background-color: dimgray;
+    border-top: 2px solid #504e4e;
+}
+footer h6{
+    color: black;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+.footer-link{
+    color: var(--main-nav-color);
+}
+.footer-link:hover{
+    color: white;
+}
+
 footer {
     box-sizing: border-box;
     display: flex;
@@ -291,10 +306,13 @@ footer {
     width: fit-content;
 }
 
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
+
+.btn{
+    background: #F4E9E5;
+    border-color: #F4E9E5;
+    color: #4F3022;
+
+
 }
 
 .btn-black {
@@ -326,7 +344,7 @@ footer {
 }
 
 .text-black {
-    color: #000 !important;
+    color: #4F3022 !important;
 }
 
 .border-black {
