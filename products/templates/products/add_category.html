@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <hr>
-            <h2 class="logo-font mb-4 mt-5">Category Management</h2>
+            <h2 class="logo-font mb-4 mt-5 text-black">Category Management</h2>
             <h5 class="text-muted">Add a Category</h5>
             <hr>
         </div>
@@ -34,10 +34,10 @@
                 {% csrf_token %}
                 {{ form|crispy}}
                 <div class="text-right mb-3">
-                    <a href="{% url 'add_category' %}" class="btn logo-font btn-style rounded">Cancel</a>
-                    <button class="btn logo-font btn-style rounded" type="submit">Add Category</button>
+                    <a href="{% url 'add_category' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Cancel</a>
+                    <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black" type="submit">Add Category</button>
                     <div>
-                        <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded mt-2">
+                        <a href="{% url 'admin_profile' %}" class="btn btn-lg btn-light px-5 mb-3 rounded-pill text-black">
                             Back to Admin Panel</a>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
             <div class="category-table table-responsive mb-5">
                 <table class="table table-sm table-borderless">
                     <thead>
-                        <tr class="border-bottom">
+                        <tr class="border-bottom text-black">
                             <th>Name</th>
                             <th>Friendly Name</th>
                             <th></th>
@@ -63,11 +63,11 @@
                             </td>
                             <td>{{category.friendly_name}}</td>
                             <td>
-                                <div class="btn logo-font d-inline">
+                                <div class="logo-font d-inline">
 
                                     <a href="{% url 'edit_category' category.id %}" class="text-success">Edit</a>
 
-                                    <button class="btn logo-font text-danger" data-toggle="modal"
+                                    <button class=" btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
                                         data-target="#deleteModal{{category.id}}">Delete</button>
                                     <!-- Modal -->
                                     {% include 'products/includes/delete_category_modal.html' %}

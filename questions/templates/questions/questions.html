@@ -18,7 +18,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font mt-5">FAQ's</h2>
+            <h2 class="logo-font mt-5 text-black">FAQ's</h2>
             <hr class="w-50 mb-2">
 
         </div>
@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-header p-0" id="headingOne-{{question.id}}">
                         <h2 class="mb-0">
-                            <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse"
+                            <button class="faq-btn btn-lg w-100 text-left p-3" type="button" data-toggle="collapse"
                                 data-target="#collapseOne-{{question.id}}" aria-expanded="false"
                                 aria-controls="collapseOne-{{question.id}}">
                                 {{question.question}}
@@ -45,7 +45,7 @@
                         <small class="text-uppercase ml-3">
                             <a href="{% url 'edit_faq' question.id %}"
                                 class="text-success text-decoration-none p-1">edit</a>
-                            <button class="btn btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
+                            <button class=" btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
                                 data-target="#deleteFAQ{{question.id}}">Delete</button>
 
                             <!-- Modal -->

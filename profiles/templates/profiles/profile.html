@@ -19,14 +19,14 @@
         <div class="row">
             <div class="col text-center">
                 <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
+                <h2 class="logo-font mb-4 text-black">My Profile</h2>
                 <hr>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-12 col-lg-6">
                 <span>
-                    <a href="{% url 'account_change_password' %}" class="btn border-secondary rounded-pill btn-style btn-outline-black text-white">Change your
+                    <a href="{% url 'account_change_password' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Change your
                         password</a>
                 </span>
             </div>
@@ -34,7 +34,7 @@
         <div class="row mb-5">
             <div class="col-12 col-lg-6">
                 <span>
-                    <a href="{% url 'account_email' %}" class="btn border-secondary rounded-pill btn-style btn-outline-black text-white">Change your
+                    <a href="{% url 'account_email' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Change your
                         login details</a>
                 </span>
             </div>
@@ -45,9 +45,9 @@
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <span><a href="{% url 'account_overview' %}" class="btn btn-outline-black rounded-0 mt-5"><i
+                    <span><a href="{% url 'account_overview' %}" class="btn btn-lg btn-light px-5 mb-3 rounded-pill text-black"><i
                         class="fas fa-chevron-left pr-2"></i>My Profile</a></span>
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Update Information</button>
                 </form>
             </div>
         </div>

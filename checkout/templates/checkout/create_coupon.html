@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <hr>
-            <h2 class="logo-font mb-4 mt-5">Coupon Management</h2>
+            <h2 class="logo-font mb-4 mt-5 text-black">Coupon Management</h2>
             <h5 class="text-muted">Create Coupons</h5>
             <hr>
         </div>
@@ -29,8 +29,8 @@
                 {% csrf_token %}
                 {{ form|crispy}}
                 <div class="text-right">
-                    <a href="{% url 'create_coupon' %}" class="btn logo-font btn-style rounded">Cancel</a>
-                    <button class="btn logo-font btn-style rounded" type="submit">Add Coupon</button>
+                    <a href="{% url 'create_coupon' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Cancel</a>
+                    <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black" type="submit">Add Coupon</button>
 
                 </div>
             </form>
@@ -40,7 +40,7 @@
             <div class="faq-table table-responsive mb-5">
                 <table class="table table-sm table-borderless">
                     <thead>
-                        <tr class="border-bottom">
+                        <tr class="border-bottom text-black">
                             <th>Coupon</th>
                             <th>Status</th>
                             <th></th>
@@ -63,7 +63,7 @@
                             <td>
                                 <div class="logo-font">
 
-                                    <button class="btn logo-font text-danger p-0 d-inline btn-sm" data-toggle="modal"
+                                    <button class="btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
                                         data-target="#deleteModal{{ coupon.id}}">Delete</button>
                                     <!-- Modal -->
 
@@ -80,7 +80,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-6 text-right mt-2 mb-5">
-            <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Back to Admin Panel</a>
+            <a href="{% url 'admin_profile' %}" class="btn btn-lg btn-light px-5 mb-3 rounded-pill text-black">Back to Admin Panel</a>
         </div>
     </div>
 </div>
