@@ -7,8 +7,8 @@
     {% csrf_token %}
     {{ form | crispy }}
     <div class="text-right">
-        <a href="{% url 'product_detail' product.id %}#reviews-section" class="btn btn-outline-dark">Cancel</a>
-        <button class="btn btn-dark" type="submit">Update</button>
+        <a href="{% url 'product_detail' product.id %}#reviews-section" class="btn btn-lg btn-light px-5 mb-3 rounded-pill">Cancel</a>
+        <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill" type="submit">Update</button>
     </div>
 </form>
 {% else %}
@@ -16,7 +16,7 @@
     {% csrf_token %}
     {{ form|crispy }}
     <div class="text-right">
-        <button class="submit-review btn btn-outline-black rounded-0" type="submit">Submit Review</button>
+        <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill" type="submit">Submit Review</button>
     </div>
 </form>
 {% endif %}
