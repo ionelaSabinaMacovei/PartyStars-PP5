@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /checkout/
+Disallow: /checkout/create_coupon/
+Disallow: /profiles/
+Disallow: /products/add_product/
+Disallow: /products/add_category/
+Sitemap: https://partystars-pp5-c4bccd7a3f65.herokuapp.com/sitemap.xml
