@@ -69,6 +69,35 @@ def create_coupon(request):
     return render(request, template, context)
 
 
+def edit_coupon(request, coupon_id):
+    """ Form for edit a cupon """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only store owners can do that.')
+        return redirect(reverse('home'))
+
+    coupon = get_object_or_404(Coupon, pk=coupon_id)
+
+    if request.method == 'POST':
+        form = CouponForm(request.POST, instance=coupon)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated Coupon!')
+            return redirect(reverse('create_coupon'))
+        else:
+            messages.error(
+                request, 'Failed to update Coupon. Please ensure the form is valid.')
+    else:
+        form = CouponForm(instance=coupon)
+    template = 'checkout/edit_coupon.html'
+    context = {
+        'form': form,
+        'coupon': coupon,
+        'on_page': True
+    }
+    return render(request, template, context)
+
+
 def add_coupon(request):
     """Allow a user to add the coupon code"""
 

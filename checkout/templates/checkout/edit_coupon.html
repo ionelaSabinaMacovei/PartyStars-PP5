@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | Create Coupon{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <hr>
+            <h2 class="logo-font mb-4 mt-5">Coupon Managment</h2>
+            <h5 class="text-muted">Edit a Coupon</h5>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'edit_coupon' coupon.id %}" class="form mb-2"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy}}
+                <div class="text-right mb-5">
+                    <a class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black" href="{% url 'create_coupon' %}">Cancel</a>
+                    <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black" type="submit">Update Category</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 text-right mt-2 mb-5">
+            <a href="{% url 'admin_profile' %}" class="btn btn-lg btn-light px-5 mb-3 rounded-pill text-black">Back to Admin Panel</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

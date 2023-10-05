@@ -62,6 +62,7 @@
                             </td>
                             <td>
                                 <div class="logo-font">
+                                    <a href="{% url 'edit_coupon' coupon.id %}" class="text-success text-uppercase">Edit</a> | 
 
                                     <button class="btn-sm p-1 logo-font text-danger text-uppercase" data-toggle="modal"
                                         data-target="#deleteModal{{ coupon.id}}">Delete</button>
