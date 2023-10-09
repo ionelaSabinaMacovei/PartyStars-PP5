@@ -24,11 +24,10 @@ Party Stars is a full stack, E-commerce project built using Django, Python, HTML
     * [Project Goals](#project-goals)
 3. [Agile Planning](#agile-planning)
     * [User Stories](#user-stories)
-    * [Epic Breakdowns](#epic-breakdowns)
 4. [Skeleton Plane](#skeleton-plane)
     * [Wireframes](#wireframes)
     * [Database Schema](#database-schema) 
-5. [The Scope Plane](#the-scope-plane)
+5. [Structure](#structure)
 6. [The Structure Plane](#the-structure-plane)
     * [Features](#features)
     * [Home Page](#home-page)
@@ -112,3 +111,300 @@ Party Stars was developed with agile planning. This meant that each individual f
 Everything was labeled as Must Have, Should Have and Could Have to help prioritise which were most important to implement.
 
 The Project board can be found [here](https://github.com/users/ionelaSabinaMacovei/projects/4).
+
+<br>
+
+## User Stories
+
+
+**Epic: Admin/Store Owner**
+
+| ID  | Content                                                                                                                                                   |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | As a **store owner** I can log in so that I have full access to the store backend                                                                         |
+| 2   | As a **store owner** I can add new product to the shop so that I can make sure the website is up to date                                                  |
+| 3   | As a **store owner** I can add new categories to the shop so that I can make sure the website is up to date                                               |
+| 4   | As a **store owner** I can add FAQ's to the site so that I can make sure that the user can find answer on the page before contacting the customer         |service                                                                                                                                                           |
+| 5   | As a **store owner** I can edit/delete products so that I can make sure the website is up to date                                                         |
+| 6   | As a **store owner** I can edit/delete categories so that I can make sure the website is up to date                                                       |
+| 7   | As a **store owner** I can edit/delete questions so that I can provide users with information about common questions and concerns                                                                                                                                                          |
+| 8   | As a **store owner** I can send out a newsletter via email so that I keep customers updated with new products                                                |
+| 9   | As a **store owner**  I can add products to a sale list, with calculated discount so that the user can obatin a bonus when buying from store                                                                 |
+| 10  | As a **store owner** I can read and respond to users questions send by contact form                                                                       |
+
+**Epic: Navigation**
+
+| ID  | Content                                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 11  | As a **user** I can see an interesting home page so that I can understand what shop sells                                    |
+| 12  | As a **user** I can easily navigate through the site so that I can view desired content                                      |
+| 13  | As a **user** I can easily find a navigation bar and footer so that I can see what content there is on the website           |
+| 14  | Aa a **user** I can easily see the products list so that I can see what the store has to offer                               |
+| 15  | As a **user** I can search products by category so that I can easily find what I'm looking for                               |
+| 16  | As a **user** I can sort products by rating, price and name so that I can easily find what I'm looking for                   |
+| 17  | As a **user** I can search for products using the search form so that I can find the products I'm specifically looking for   |
+| 18  | As a **user** I can see the book details page so that I can prodcut name, rating, price, short description and reviews  |
+| 19  | As a **user** I can read the FAQ's so that I can find the answer to my question or concern before contacting the store   |
+
+**Epic: Purchase**
+| ID | Content |
+| --- | ----------- |
+| 20 | As a **user** I can select the quantity of the desired product so that I can buy more product of the same kind
+| 21 | As a **user** I can add a selected product into the shopping bag so that I can keep track of what I am spending
+| 22 | As a **user** I can see the shopping bag summary and total cost so that I can see how much I will spend
+| 23 | As a **user** I can remove items from shopping bag so that I don't buy what I don't want
+| 24 | As a **user** I can put in my card details so that I can pay for my goods
+| 25 | As a **user** I receive order confirmations so that I can be sure my order has been processed
+| 26 | As a **user** I can select the quantity of the desired product so that I can buy more product of the same kind
+| 27 | As a **user** I can easily view deals and sales so that I can take advantage of savings on products I want to purchase
+| 28 | As a **user** I can see my carbon footprint in the shooping bag so that I know if I would go furhet with my products
+
+**Epic: User Interaction**
+
+| ID  | Content                                                                                                                                |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 29  | As a **user** I can see rating and reviews so that I can read the opinions of other users                                              |
+| 30  | As a **user** I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated      |
+| 31  | As a **user** I can connect to the social media sites so that I can follow them and keep up to date with their products and promotions |
+| 30  | As a **user** I can sign up for the website's newsletter so that I can keep up to date with new products and promotions                |
+| 31  | As a **user** I can contact the store so that I can find out any information that I require                                            |
+| 32  | As a **logged-in User** I can leave reating and reviews so that I can share my experience with others                                  |
+
+**Epic: Accounts**
+
+| ID  | Content                                                                                                                  |
+| --- | ------------------------------------------------------------------------------------------------------------------------ |
+| 33  | As a **user** I can easily see if I'm logged-in or logged-out so that I can be sure what my status is                    |
+| 34  | As a **user** I can log in/out off my account if I wish so that I can connect or disconnect from the website             |
+| 35  | As a **user** I can register for an account so that I can use features for logged-in users                               |
+| 36  | As a **user** I can receive a confirmation email when creating an account so that I know the registration was successful |
+| 37  | As a **logged-in User** I can have my details saved so that I don't have to retype my address every time                 |
+| 38  | As a **logged-in User** I can add selected products to my whishlist so that I can save them for later purchase           |
+
+**Epic: Developer Task**
+
+| ID  | Content                                                                                                                  |
+| --- | ------------------------------------------------------------------------------------------------------------------------ |
+| 39  | Install Django so that a project can be created                                                                          |
+| 40  | Install Django AllAuth                                                                                                   |
+| 41  | Create a Heroku app and connect it to the django project.                                                                |
+| 42  | Implement stripe payment system API within the project                                                                   |
+| 43  | Connetc AWS storage for static files and images                                                                          |
+| 44  | Set up the mailchimp for subracribe and newletters.                                                                      |
+
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+## Skeleton Plane
+
+### Wireframes
+
+# Wireframes
+
+All wireframes were created used [Balsamiq](https://balsamiq.com/)
+
+Wireframes:
+
+- [Home Page](assets/wireframes/home-page1.png)
+- [Product List](assets/wireframes/products-page.png)
+- [Product Details](assets/wireframes/product-details-page.png)
+- [Product Details 1 ](assets/wireframes/product-details1-page.png)
+- [Shopping Bag](assets/wireframes/shopping-bag-page.png)
+- [Checkout](assets/wireframes/checkout-page.png)
+
+<br>
+
+### Database Schema
+
+![Database Schema](assets/Database%20ER%20diagram.png)
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Structure
+
+- The structure idea for Party Stars was to keep it simple. Simplicity helps users to quickly and easily access the app and navigate within the app.
+- Home page with an carousel that immediately tells the user what the site is for.
+- Account registration which will allow for restricted viewing on Editing and Deleting reviews, wishlists and saving their information for quicker checkout next time.
+- Fully responsive website, tested across all screen sizes, with navigation for mobile.
+
+The website is made from 8 apps:
+
+- Products
+- Checkout
+- Home
+- Profiles
+- Questions
+- Bag
+- Wishlist
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+## The Structure Plane
+
+# Features 
+
+## Existing Features
+
+### Home Page
+![Home Image](assets/features/home-page.png)
+- The home page features a carousel, with some text that show a product for sale. This lets the user know immediately what type of items are available.
+- The index page is split into multiple sections, with the information easy to read and eye catching to a visitor.
+- There is a button that links to the product details page.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Navigation bar
+![Navbar Image](assets/features/navbar.png)
+- The navigation bar appears on every page so users can easily navigate through the site
+- Navigation bar has links for 'Home', 'All Products', 'Categories', 'Special Offers and icons for search bar, account and shopping bag, also if the user is loged in the heart icon for wishlist will apear on the navbar.
+- The Login/Register feature is located in the upper right corner and offers the user to log in or register for an account as well as log out of the site
+- When the user is logged in links for 'Login' and 'Register' will change to 'My Profile', 'Logout'
+- The admin user has extra access that allow them to add, update and remove products, category and faq's from the store
+- The shopping bag is also situated on the top right corner of the site and it is always visible for the user throughout all the pages. With one click they can access their shopping bag to see what is in there, update the quantities of book they wish to purchase or to delete them from the shopping bag
+- The navbar contain a banner with the information about delivery
+- The navbar is fully responsive, collapsing into a hamburger menu for medium and small screen size
+
+
+### Footer
+![Footer Image](assets/features/footer.png)
+- The footer is used across all pages, with links to Home, Contact, FAQs, Privacy Policies, Shpping Info and About us.
+- The footer also has our newsletter signup, generated through MailChimp. This makes it available across every page to maximise the chance of someone signing up.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Products Page
+![Products Page Image](assets/features/products-page.png)
+- The Products Page lists all products initially.
+- This can be changed by choosing a category from the drop down navbar menu.
+- Clicking on the title or image will bring the user to the product detail page for that item.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Product Details Page
+![Product Detail Image](assets/features/product-detail-page.png)
+- The product detail page shows a larger product image, a description for the product, category tag, rating stars, wishlist tag wich allows users to add items to wish list, a quantity selector and, as well as allowing the user to add this product to their cart.
+- The page also shows user left reviews, with the option for logged in users to leave their own.
+- Reviews are able to be updated or deleted by the User who left them or by admin/superusers. This is all CRUD functionality.
+
+![Review Image](assets/features/review.png)
+![Review Image](assets/features/update-review.png)
+![Review Image](assets/features/delete-review.png)
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Categories Section
+![Category Page](assets/features/category-page.png)
+- Categories dropdown from Navbar, allowing the user to access specific categories
+- Categories page it is using the same format as the product list.
+
+![Category dropdown ](assets/features/category-dropdown.png)
+- Categories:
+  - Baby
+  - Birthday Party
+  - Kids Party
+  - Milestone Birthday
+  - Season & Events
+  - Wedding
+
+
+
+### **Special Offers**
+![Special offers dropdown ](assets/features/special-offers.png)
+- Special Offers dropdown from Navbar, allowing the user to access specific offer
+- From the dropdown menu user can select :
+    - Sale
+    - New arrivals
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Contact Page
+![Contact Page Image](assets/features/contact-page.png)
+- The contact page features small icons with quick and easy to read information with a phone number, address and email.
+- The page also hold a form for users to get in contact with the business. 
+
+
+### FAQs Page
+![FAQs Page Image](assets/features/faq-page.png)
+- The FAQs page gives the user information about shipping, helium, cupon code and payment options.
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Wishlist Page
+![Wishlist Image](assets/features/wishlist-page.png)
+- The Wishlist page allows users to have a list of all the products they have added to their Wishlist, by clicking the heart icon on each product.
+- On the Wishlist page, there is a short summary of the product, as well as a link to the product detail page, which allows users to add it to their cart.
+- The page also has a view and remove option, which allows users to remove product from their Wishlist - again this is done through CRUD functionality.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### About Us
+![About Us Image](assets/features/about-us.png)
+- About Us modal present our mission and our eco journey
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Shipping Info
+![Shipping Info Image](assets/features/shipping-info.png)
+- Shiping info modal contain information about our shipping policy.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Privacy Policies
+![Privacy Policies Image](assets/features/privacy-policie.png)
+- Privacy Policies modal contain information about our privacy policy.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Shopping Bag Page
+![Shopping Bag Image](assets/features/shopping-bag.png)
+- The Shopping bag page shows everything a user has in their bag currently.
+- This page allows for updating quantities, deleting products from their bag and seeing details of each product.
+- The subtotals are calculated automatically and if a product is on sale, it will show the original price of each item and the sale price.
+
