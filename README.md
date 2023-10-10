@@ -467,3 +467,128 @@ The website is made from 8 apps:
 ![Category Managment Image](assets/features/category-managment.png)
 ![Faq' Managment Image](assets/features/faq-mangment.png)
 ![Coupon Managment Image](assets/features/coupon-managment.png)
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+## Future Features
+
+- Stock app
+- Currently, the coupons can be added any number of times - there is no limit for one use per customer. I tried to implement that to no success.
+- Carbon Footprint
+
+
+## The Surface Plane
+## Design
+### Colour Scheme
+ -  The colour scheme was designed so that while it stands out as a bright interface, the colours also don't distract from the product images, as these are the main point of the website.
+
+![Color Scheme](assets/color-pallete.png)
+
+### Typography
+ -   The font chosen for the website is a font called Comic Neue. This was picked because it is very easy to read with a medium contrast but it also has a somewhat fantasy feel to it. I wanted the typography to compliment the website, not overpower what it was saying. The font was found on [Google Font](https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap) and imported to the website with a CSS import.
+
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+## **Business Model**
+
+This website follows a Business to Customer model - it sells party products  directly to the customer. The website has been built for quick checkout users, with extra features available to users who have signed up to the website, as well as users who subscribe to the newsletter.
+
+[Back to Top](#table-of-contents)
+
+## **Marketing Strategy**
+
+### **Social Media Marketing**
+
+A Facebook page is included. The main goal of this Facebook page would be to showcase new deals on products, give coupon code discounts to followers.
+
+![Facebook 1](assets/facebook-page.png)
+
+### **Newsletter Marketing**
+
+The website has an embedded [Mailchimp](https://mailchimp.com/?currency=EUR) newsletter in the footer with a message that inform user if they subscribe they will recive an coupon code. The campaign sends out a custom thank you email with a discount code to encourage users to subscribe.
+
+This newsletter can in turn be used by the site owner to send subscribers emails on the latest products, deals, and discounts available.
+
+![Newsletter Embedded Form](assets/mailchimp-form.png)
+![Newsletter Email](assets/mailchimp-email.png)
+
+[Back to Top](#table-of-contents)
+
+## **Search Engine Optimization (SEO)**
+
+- I have created a sitemap.xml and robots.txt file to help aid search engines locate the site. To keep user's information safe, any pages that could contain sensitive information has been disallowed in the robots.txt.
+
+[Back to top](#table-of-contents)
+
+<br>
+
+# Technologies
+
+## Languages Used
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+## Frameworks Used
+
+* [Django](https://www.djangoproject.com/)
+* [Bootstrap](https://blog.getbootstrap.com/) 
+
+## Libraries And Installed Packages
+
+* [crispy-bootstrap4](https://pypi.org/project/crispy-bootstrap4/) - Template pack used for django-crispy-forms
+* [django-crispy-forms](https://pypi.org/project/crispy-bootstrap4/) - Used to render forms throughout the project.
+* [dj-database-url](https://pypi.org/project/dj-database-url/) - A package used to utilize DATABASE_URL environment variable. 
+* [django-allauth](https://django-allauth.readthedocs.io/en/latest/) - Allows authentication, registration and account management in Django.
+* [django-countries, v7.2.1](https://pypi.org/project/django-countries/7.2.1/) - Django application used to provide country choices for use with forms, and a country field for models.
+* [gunicorn](https://gunicorn.org/) - A Python WSGI HTTP Server for UNIX.
+* [psycopg2](https://pypi.org/project/psycopg2/) - A PostgreSQL database adapter.
+* [boto3==1.26.27](https://pypi.org/project/boto3/) - An Amazon Web Services (AWS) software development kit (SDK) used to connect to the S3 bucket
+* [django storages](https://django-storages.readthedocs.io/en/latest/) - Collection of custom storage backends for Django.
+* [Css Minifier](https://www.toptal.com/developers/cssminifier) - Minify CSS for better response time.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+## Tools And Resources
+* [GitPod](https://www.gitpod.io/)
+* [GitHub](https://github.com/)
+* [Heroku](https://heroku.com)
+* [ElephantSQL](https://www.elephantsql.com/)
+* [ReadMe Template](https://github.com/Code-Institute-Solutions/readme-template)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Coolors](https://coolors.co/)
+* [AmIResponsive](https://ui.dev/amiresponsive)
+* [AWS](https://aws.amazon.com/) – was used to store static files 
+* [Google Fonts](https://fonts.google.com/https://fonts.google.com/) - provide fonts for the website.
+* [Font Awesome](https://fontawesome.com/) -was used for icons.
+* [Balsamiq](https://balsamiq.com/) - was used to create site wireframes.
+
+
+## Extensions 
+
+[Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - was used to to create, configure, and manage AWS services
+
+[Pillow](https://pillow.readthedocs.io/en/stable/) - This library provides extensive file format support, an efficient internal representation, and fairly powerful image processing capabilities.
+
+[Stripe](https://stripe.com/docs) - was used to make and process payments
+
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
