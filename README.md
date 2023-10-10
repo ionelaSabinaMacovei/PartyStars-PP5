@@ -348,8 +348,10 @@ The website is made from 8 apps:
 ### Contact Page
 ![Contact Page Image](assets/features/contact-page.png)
 - The contact page features small icons with quick and easy to read information with a phone number, address and email.
-- The page also hold a form for users to get in contact with the business. 
+- The page also hold a form for users to get in contact with the business. When the user submit the form an email will be sent to the admin and another one for the user and bouth of them will be notified. 
 
+![Contact Email for User Image](assets/features/user-contact.png)
+![Contact Email for Admin Image](assets/features/admin-contact.png)
 
 ### FAQs Page
 ![FAQs Page Image](assets/features/faq-page.png)
@@ -408,3 +410,60 @@ The website is made from 8 apps:
 - This page allows for updating quantities, deleting products from their bag and seeing details of each product.
 - The subtotals are calculated automatically and if a product is on sale, it will show the original price of each item and the sale price.
 
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### Checkout Page
+![Checkout Image](assets/features/checkout-page.png)
+![Coupon Image](assets/features/coupon-code.png)
+- The checkout page shows the products, prices, a coupon section, includes a users information and a stripe element for secure card payments.
+- The coupon code section allows a user to add a coupon code, which then shows how much of a discount the user will get, as well as their newly updated total price.
+- On successful checkout, an order summary page is shown. This will include the discount if a coupon was used, and has a link to brows more products after. Also the user will recive an email with the order confirmation.
+![Order Summary Image](assets/features/order-summary-page.png)
+![Email confirmation Image](assets/features/email-confirmation.png)
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### User Profile
+![Profile Page Image](assets/features/profile-page.png)
+
+- A logged-in user can access the My Profile link, this page displayed links to personal details, previous orders and wishlist
+- The personal details page is where the user can update their default shipping/billing address, change email address and password
+- The previous order displays a list of all the orders previously made by the user
+- Wishlist displays the list of items the user has saved to their wishlist, with the ability to remove the product
+
+![Profile Personal Detail Image](assets/features/profile-details.png)
+![Profile Order History Image](assets/features/profile-order-history.png)
+![Profile Wishlist Image](assets/features/profile-wishlist.png)
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+### **Admin**
+
+![Admin Page Image](assets/features/admin-profile.png)
+
+- Admin can preform full CRUD functionalliy without having to enter the default 'admin panel' from django
+- Admin can add products from 'Product Managment' link in the account menu from the navigation bar
+- Admin can add category from 'Product Managment' link
+- Admin can add FAQ's from 'FAQ's' link
+- Admin can add coupon from 'Coupon's' link
+- Admin can edit/delete product from all product page and product details page
+- Admin can edit/delete category from 'Category Management' link
+- Admin can edit/delete FAQ from 'FAQ Managemnt' and FAQ's page, mark them as published or draft
+- Admin can edit/delete FAQ from 'Coupon Managment' and Coupon page, mark them as active
+
+![Product Managment Image](assets/features/product-managment.png)
+![Category Managment Image](assets/features/category-managment.png)
+![Faq' Managment Image](assets/features/faq-mangment.png)
+![Coupon Managment Image](assets/features/coupon-managment.png)
