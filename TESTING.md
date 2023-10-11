@@ -57,6 +57,7 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 <img src="assets/testing/admin-add-coupon1.png">
 <img src="assets/testing/admin-add-coupon.png">
 </p>
+<br>
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 ----|---------------|-----------------|---------------|----------
@@ -70,99 +71,98 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 <img src="assets/testing/admin-edit-product2.png">
 <img src="assets/testing/admin-delete-product.png">
 </p>
-
-6. As a store owner I can edit/delete categories so that I can make sure the website is up to date
-    - Store Owner can edit/delete categories directly from admin panel
+<br>
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 ----|---------------|-----------------|---------------|----------
 9.| Store owner edit categories| Admin can edit categories from admin panel | As expected | Pass
 10.| Store owner delete categories| Admin can delete categories from admin panel | As expected | Pass
 <br>
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/edit-category.png" width="600" height="100%">
+<p>
+<img src="assets/testing/admin-edit-category.png">
+<img src="assets/testing/admin-edit-category1.png">
+<img src="assets/testing/admin-delete-category.png">
 </p>
+<br>
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/delete-category.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+11.| Store owner edit Faq's| Admin can edit Faq's from admin panel and Faq's page| As expected | Pass
+12.| Store owner delete Faq's| Admin can delete Faq's from admin panel and Faq's page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/admin-edit-faq.png">
+<img src="assets/testing/admin-edit-faq1.png">
+<img src="assets/testing/admin-edit-faq2.png">
+<img src="assets/testing/admin-delete-faq.png">
 </p>
+<br>
 
-7. As a store owner I can edit/delete FAQ's so that I can make sure the FAQ's are answered on correctly
-    - Store Owner can edit/delete questions directly from the FAQ's page or from admin panel
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/questions-page-edit-delete.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+13.| Store owner edit Coupons| Admin can edit Coupons from admin panel| As expected | Pass
+14.| Store owner delete Coupons| Admin can delete Coupons from admin panel| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/admin-edit-coupon.png">
+<img src="assets/testing/admin-edit-coupon1.png">
+<img src="assets/testing/admin-delete-coupon.png">
 </p>
+<br>
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/edit-question.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+15.| Store owner can read/respond to users questions| Admin can read/respond to users questions send by contact form| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/admin-contact-form.png">
+<img src="assets/testing/admin-contact-form1.png">
+<img src="assets/testing/admin-contact-form2.png">
 </p>
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/delete-question.png" width="600" height="100%">
-</p>
-
-8. As a store owner I can send out a newsletter via email so that I keep customers updated with new books
-    - Store owner can send newsletter to all subscribers
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/newsletter-message.png" width="600" height="100%">
-</p>
-
-9. As a store owner I have created Facebook shop page to increase traffic on my website
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/facebook-page-bookstore2.png" width="600" height="100%">
-</p>
-
-10. As a store owner I can read and respond to users questions send by contact form
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/bookstore-customer-service.png" width="600" height="100%">
-</p>
-
-11. As a store owner I can unsubscribe subscribers from newsletter
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/newsletter-admin.png" width="600" height="100%">
-</p>
+<br>
 
 
 ## EPIC: Navigation
 
-12. As a user I can see an interesting home page so that I can understand what shop sells
-    - The landing page has a short description that describes the purpose of the page so that the user can immediately see the purpose of the page
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/home-page.png" width="100%" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+1.| User can see the purpose of the shop on the landing page | The landing page has a short description that describes the purpose| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/navigation-home-page.png">
 </p>
+<br>
 
-13. As a user I can easily navigate through the site so that I can view desired content
-    - Navigation is located on each page so that the user can easily and simply navigate through the page and find all the necessary information
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/navigation-bar2.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+2.| User can easily navigate to view desired content | Navigation is located on each page so that the user can easily navigate| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/navigate-navbar.png">
 </p>
+<br>
 
-14. As a user I can easily find a navigation bar and footer so that I can see what content there is on the website
-    - The navigation bar and the footer are on every page and provide the user with a quick link to the desired content
-    
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/navigation.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+3.| User can find a navigation bar and footer | Navigation bar and the footer are on every page and provide the user with a quick link to the desired content| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/navigation-navbar1.png">
+<img src="assets/testing/navigation-foter.png">
 </p>
+<br>
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/footer.png" width="900" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+4.| User can see the products list | Products list can be find by presing on "Shop Now" button and Products Nav link| As expected | Pass
+5.| User can sort the products | User can sort products by price, title, category and rating on the products list page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/navigation-product-list.png">
+<img src="assets/testing/navigation-product-list1.png">
+<img src="assets/testing/navigation-product-list2.png">
 </p>
-
-15. Aa a user I can easily see the products list so that I can see what the store has to offer
-    - On the All books page, the user can see a list of all the books in the store and can sort them by price, title, category and rating.
-
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-list.png" width="600" height="100%">
-</p>
+<br>
 
 16. As a user I can search products by category so that I can easily find what I'm looking for
     - User can search books by category and easily sort books by desired book type
