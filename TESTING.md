@@ -195,173 +195,193 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 </p>
 <br>
 
-19. As a user I can see the book details page so that I can see the book name, rating, price, short description and comments
-    - The user can see the book details and leave a review if they have an account
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-details-page.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+10.| User can read the FAQ's| User can read the FAQ's page by accessing the link from the footer| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/faq.png">
 </p>
-
- <p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/reviews-navigation.png" width="600" height="100%">
-</p>
-
-20. As a user I can read the FAQ's so that I can find the answer to my question or concern before contacting the bookstore
-    - The user can read the FAQ's page before contacting the bookstore and check if his question has already been answered
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/questions-page.png" width="900" height="100%">
-</p>
+<br>
 
 ## EPIC: Purchase
 
-21. As a user I can select the quantity of the desired product so that I can buy more product of the same kind
-    - User can select quantity of the desired product on Book Detail page and on Shopping Bag page
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/quantity-btns-book-details.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+1.| User can select the quantity of the desired product| User can select quantity of the desired product on Product Detail page and on Shopping Bag page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/quantity.png">
+<img src="assets/testing/quantity1.png">
 </p>
+<br>
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+2.| User can add a selected product into the shopping bag| User can add selected product into the shopping bag from Products page and from Product Details Page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/add-product.png">
+<img src="assets/testing/add-product1.png">
 </p>
+<br>
 
-22. As a user I can add a selected book into the shopping bag so that I can keep track of what I am spending
-    - User can add selected book into the shopping bag from All Books page and from Book Details Page
-
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/quantity-btns-book-details.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+3.| User can see the total cost of the shopping bag| Shopping bas is located in navbar and user can always see the total cost| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/total-cost.png">
 </p>
+<br>
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/book-list.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+4.| User can remove items from shopping bag| User can remove the unwanted items from shopping bag page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/remove-item.png">
 </p>
+<br>
 
-23. As a user I can see the shopping bag summary and total cost so that I can see how much I will spend
-    - Shopping bas is located in navbar and user can always see shopping bag summary
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag-summary.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+5.| User pay for my goods| User can put in card details and delivery details in the checkout page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/card-details.png">
 </p>
+<br>
 
-24. As a user I can remove items from shopping bag so that I don't buy what I don't want
-    - User can remove the unwanted items from the shopping bag
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/shopping-bag.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+6.| User receive order confirmations| After user submitted the purcase they can see order summary and confirmation| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/checkout-confirmation.png">
 </p>
-
-25. As a user I can put in my card details so that I can pay for my goods
-     - User can put in card details and delivery details so that they can make a purchase
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/checkout.png" width="600" height="100%">
-</p>
-
-26. As a user I receive order confirmations so that I can be sure my order has been processed
-    - After user submitted the purcase they can see order summary and confirmation
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_purchase/order-confirmation.png" width="600" height="100%">
-</p>
-
+<br>
 
 ## EPIC: User Interaction
 
-27. As a user I can see rating and reviews so that I can read the opinions of other users
-
-
- <p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/reviews-navigation.png" width="900" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+1.| User can see rating and reviews| User can see rating and reviews on the Product Details page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/rating-review.png">
 </p>
+<br>
 
- <p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/rating-book-details.png" width="900" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+2.| User can see/recive notification| Toast messages inform the user of their status and any change the user makes| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/toast.png">
 </p>
+<br>
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/rating-books-page.png" width="900" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+3.| User can connect to the social media sites| Social media link are located in the footer of every page so user can easily connect| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/social-links.png">
 </p>
+<br>
 
-28. As a user I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated
-    -  Toast messages inform the user of their status and any change the user makes
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/toasts.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+4.| User can subscribe for website's newsletter| Footer containes a link for User to subscribe to store newsletter, once subscribe user will receive email confirmation| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/subscribe.png">
+<img src="assets/testing/subscribe1.png">
 </p>
+<br>
 
-29. As a user I can connect to the social media sites so that I can follow them and keep up to date with their products and promotions
-    - Social media link are located in the footer of every page so user can easily connect
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-admin/facebook-page-bookstore2.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+5.| User can unsubscribe from newsletter| In every email user can find address to unsubscribe| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/unsubscribe.png">
 </p>
+<br>
 
-30. As a user I can sign up for the website's newsletter so that I can keep up to date with new products and promotions
-    - Footer containes a link for User to subscribe to bookstore newsletter, once subscribe user will receive email confirmation  
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/subscribe-confirm.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+6.| User can contact the store| User can contact the store by using the contact form from footer "Contact Us"| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/email-contact-us.png">
 </p>
+<br>
 
-31. As a user I can unsubscribe from newsletter if I don't want to receive stors newsletters
-    - In every email user can find address to unsubscribe
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/unsubscribe-user.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+7.| Logged-in User I can leave reating and reviews| Logged-in User I can leave reating and reviews on the Product Details page| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/leave-review.png">
 </p>
+<br>
 
-32. As a user I can contact the bookstore so that I can find out any information that I require
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/contact-page" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+8.| Logged-in User I can save selected products to whishlist| Logged-in User can save and remove products to wishlist| As expected | Pass
+9.| User that don't have an account can not access "add to wishlist" | For Users that don't have an account and try to use "add to wishlist" a log-in page will be displayed| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/add-wishlist.png">
+<img src="assets/testing/remove-wishlist.png">
+<img src="assets/testing/wishlist-not.png">
 </p>
-
-33. As a user I can receive a contact confirmation email to let me know that my email has been sent
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/confirmation-contact-form.png" width="600" height="100%">
-</p>
-
-34. As a logged-in User I can leave reating and reviews so that I can share my experience with others
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/review-user-interaction.png" width="900" height="100%">
-</p>
-
-35. As a logged-in User I can save selected products to my whishlist for later purchase
-    - Logged-in User can save and remove products to wishlist. 
-    - For Users that don't have an account and try to use "add to wishlist" button a pop window will tell users to open an account to uset this feature 
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/wishlist-remove.png" width="600" height="100%">
-</p>
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-user-interaction/wishlist-create-account.png" width="600" height="100%">
-</p>
+<br>
 
 ## EPIC: Accounts
 
-36. As a user I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
-    - User can easily see they account status, when the user is logged in they will see My Account link
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+1.| User can easily see logged-in or logged-out status| User can easily see they account status, when the user is logged in they will see My Profile link| As expected | Pass
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-account/accounts-login.png" width="600" height="100%">
+<br>
+<p>
+<img src="assets/testing/user-status.png">
 </p>
+<br>
 
-37. As a user I can log in/out off my account if I wish so that I can connect or disconnect from the website
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+2.| User can log in/out| User can easily log-in or log-out from navbar from log-in or log-out link wich will take the user to log-in/log-out page| As expected | Pass
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-account/accounts-signin.png" width="600" height="100%">
+<br>
+<p>
+<img src="assets/testing/sign-in.png">
+<img src="assets/testing/sign-out.png">
 </p>
+<br>
 
-38. As a user I can register for an account so that I can use features for logged-in users
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+3.| User can register for an account| User can easily register from navbar from register link wich will take the user to register page| As expected | Pass
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-account/register.png" width="600" height="100%">
+<br>
+<p>
+<img src="assets/testing/register.png">
 </p>
+<br>
+
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+4.| User can register for an account| User can easily register from navbar from register link wich will take the user to register page| As expected | Pass
+
+<br>
+<p>
+<img src="assets/testing/register.png">
+</p>
+<br>
 
 39. As a user I can receive a confirmation email when creating an account so that I know the registration was successful
 
