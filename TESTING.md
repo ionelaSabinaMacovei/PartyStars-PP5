@@ -161,31 +161,39 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 <img src="assets/testing/navigation-product-list.png">
 <img src="assets/testing/navigation-product-list1.png">
 <img src="assets/testing/navigation-product-list2.png">
+<img src="assets/testing/navigation-product-list3.png">
 </p>
 <br>
 
-16. As a user I can search products by category so that I can easily find what I'm looking for
-    - User can search books by category and easily sort books by desired book type
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/sort-category.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+6.| User can search products  by category| User can search products by category| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/search-category.png">
 </p>
+<br>
 
-
-17. As a user I can sort products by rating, price and name so that I can easily find what I'm looking for
-    - User can sort products by price,rating,title and category on All Books page
-
-
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/sort-by-category.png" width="600" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+7.| User can search products| User can search products by search form, witch will perform a search in the author, title and description fields| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/search-bar.png">
 </p>
+<br>
 
-18. As a user I can search for products using the search form so that I can find the products I'm specifically looking for
-    - User can use search bar to search for specific product, search form will perform a search in the author, title and description fields
-
- <p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic_navigation/search-form.png" width="900" height="100%">
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+8.| User can see the product details| User can see the product name, rating, price and short description in the product details page| As expected | Pass
+9.| User can see comments| User can leave a review if they have an account| As expected | Pass
+<br>
+<p>
+<img src="assets/testing/product-detail.png">
+<img src="assets/testing/review.png">
+<img src="assets/testing/review1.png">
 </p>
+<br>
 
 19. As a user I can see the book details page so that I can see the book name, rating, price, short description and comments
     - The user can see the book details and leave a review if they have an account
