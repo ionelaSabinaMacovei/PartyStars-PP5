@@ -383,14 +383,23 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
 </p>
 <br>
 
-39. As a user I can receive a confirmation email when creating an account so that I know the registration was successful
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+5.| User can receive a confirmation email when creating an account| User will recive a notification message then they have to check their email address| As expected | Pass
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-account/confirm-email.png" width="600" height="100%">
+<br>
+<p>
+<img src="assets/testing/email-verification.png">
+<img src="assets/testing/email-registriation.png">
 </p>
+<br>
 
-40. As a logged-in User I can have my details saved so that I don't have to retype my address every time
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
+----|---------------|-----------------|---------------|----------
+6.| Logged-in User can have my details saved| Logged-in User can see their details saved in Personal details fron navbar| As expected | Pass
 
-<p align="center">
-<img src="assets/documents/README_docs/user-story-testing/epic-account/delivery-details.png" width="600" height="100%">
+<br>
+<p>
+<img src="assets/testing/personal-details.png">
 </p>
+<br>

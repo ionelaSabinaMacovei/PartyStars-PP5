@@ -65,13 +65,7 @@ Party Stars is a full stack, E-commerce project built using Django, Python, HTML
     * [Libraries And Frameworks](#libraries-and-frameworks)
     * [Tools and Resources](#tools-and-resources)
 10. [Testing](#testing)
-    * [Validator Testing](#validator-testing)
-    * [Other Testing](#other-testing)
-11. [Bugs Found and Fixed](#bugs-found-and-fixed)
-    * [Bugs Not Fixed](#bugs-not-fixed)
-12. [Credits And Sources](#credits-and-sources)
-13. [Deployment](#deployment)
-14. [Acknowledgements](#acknowledgements)
+
 
 <br>
 
