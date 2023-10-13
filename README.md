@@ -270,6 +270,15 @@ The website is made from 8 apps:
 - The navbar contain a banner with the information about delivery
 - The navbar is fully responsive, collapsing into a hamburger menu for medium and small screen size
 
+### Banner
+![Banner Image](assets/features/banner.png)
+
+-Before the navbar a banner is displyed. This notify the user about the free delivery when he spend over 20 euro.
+
+### Toast Messages
+![Notifications Image](assets/testing/toast.png)
+
+Toast messages are used to inform the user as they interact with the site. Toast messages appear on the top right of the screen and are customised to show information relevant to each action or submission by the user.
 
 ### Footer
 ![Footer Image](assets/features/footer.png)
@@ -470,7 +479,7 @@ The website is made from 8 apps:
 
 ## Future Features
 
-- Stock app
+- Stock app, where site will allow the future development of Stock Level Quantity Selectors. But in the future I would like to develop this functiolnality to adapt the Quantity selectors present in the product detail and shopping bag to display only the qunatity of each item available to the user at any given moment.
 - Currently, the coupons can be added any number of times - there is no limit for one use per customer. I tried to implement that to no success.
 - Carbon Footprint
 
@@ -504,6 +513,9 @@ This website follows a Business to Customer model - it sells party products  dir
 
 A Facebook page is included. The main goal of this Facebook page would be to showcase new deals on products, give coupon code discounts to followers.
 
+ Links to all the social media sites can be found both inside the footer and on the contact page.
+
+![Links](assets/testing/social-links.png)
 ![Facebook 1](assets/facebook-page.png)
 
 ### **Newsletter Marketing**
