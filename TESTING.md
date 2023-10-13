@@ -62,10 +62,9 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Resul
 
 ## EPIC: Accounts
 
+No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Result 
+----|---------------|-----------------|---------------|-----------|---------------
 1.| User can easily see logged-in or logged-out status| User can easily see they account status, when the user is logged in they will see My Profile link| User can see the their status by clicking on the my account icon | Pass | <img src="assets/testing/user-status.png">
-
-No. |Feature Tested | Expected Result | Actual Result | Pass/Fail
-----|---------------|-----------------|---------------|----------
 2.| User can log in/out| User can easily log-in or log-out from navbar from log-in or log-out link wich will take the user to log-in/log-out page| The log-in and log-out links will take the user to the desiered page | Pass |
 3.| User can register for an account| User can easily register from navbar from register link wich will take the user to register page| The registration button can be found in the my account dropdown. Resistarion link will take te user on the registartion page where he have to complete all the fields | Pass | 
 4.| User can receive a confirmation email when creating an account| User will recive a notification message then they have to check their email address| After the registration form is submited the user will recive a confirmation email where he will find a link to confirm his account  | Pass | <img src="assets/testing/email-registriation.png">
