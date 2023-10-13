@@ -1,6 +1,144 @@
-# User Stories Testing
+[Validators](#validators)
+* [Lighthouse](#lighthouse)
+* [HTML](#html)
+* [CSS](#css)
+* [JSHINT](#jshint)
+* [PEP8](#pep8)
 
-## EPIC: Store Owner
+[Manual Testing](#manual-testing)
+
+[Responsiveness](#responsiveness)
+
+[Bugs](#bugs)
+
+
+# Lighthouse 
+
+<p>
+<img src="assets/lighthouse.png">
+</p>
+
+# HTML
+
+- All Pages were checked with the official [W3C validator](https://validator.w3.org/). 
+
+
+
+## Home Page
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/home-page-validator.png" width="100%" height="100%">
+</p>
+
+
+## All Books Page
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/all-boks-validator.png" width="100%" height="100%">
+</p>
+
+## Book Detail
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/book-detail-validator.png" width="100%" height="100%">
+</p>
+
+## Shopping Bag
+
+Unsolved bug! 
+Due to lack of time, it remained unresolved
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
+</p>
+
+
+## Checkout Page
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/checkout-validator.png" width="100%" height="100%">
+</p>
+
+
+## User Account
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/account-validator.png" width="100%" height="100%">
+</p>
+
+### Personal Details
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/user-details-validator.png" width="100%" height="100%">
+</p>
+
+### Order History
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/order-history-validator.png" width="100%" height="100%">
+</p>
+
+### Wishlist
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/wishlist-validator.png" width="100%" height="100%">
+</p>
+
+
+## Admin Account
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/admin-profile-validator.png" width="100%" height="100%">
+</p>
+
+### Add Category 
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/add-category-validator.jpg" width="100%" height="100%">
+</p>
+
+### Add Book
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/add-book-validator.png" width="100%" height="100%">
+</p>
+
+
+### Add FAQ's
+<p align="center">
+<img src="assets/documents/README_docs/validators/add-question-validator.png" width="100%" height="100%">
+</p>
+
+
+### Newsetter
+<p align="center">
+<img src="assets/documents/README_docs/validators/newsletter-validator.png" width="100%" height="100%">
+</p>
+
+
+
+
+## Contact Page
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/contact-validator.png" width="100%" height="100%">
+</p>
+
+## FAQ's
+
+<p align="center">
+<img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
+</p>
+
+
+
+# Manual Testing
+
+This table shows all the manual testing done for the website, and whether it worked as expected or not.
+
+## User Stories Testing
+
+### EPIC: Store Owner
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Result 
 ----|---------------|-----------------|---------------|-----------|---------------
@@ -20,7 +158,7 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Resul
 14.| Store owner delete Coupons| Admin can delete Coupons from admin panel| When admin is loged-in he can delete coupons from Coupons managment in the admin link | Pass | <img src="assets/testing/admin-delete-coupon.png">
 15.| Store owner can read/respond to users questions| Admin can read/respond to users questions send by contact form| Admin will be notified be email when the user will submit the contact form completed so that the admin can read and respond to the user | Pass | <img src="assets/testing/admin-contact-form1.png">
 
-## EPIC: Navigation
+### EPIC: Navigation
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Result 
 ----|---------------|-----------------|---------------|-----------|---------------
@@ -35,7 +173,7 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Resul
 9.| User can see comments| User can leave a review if they have an account| If user is logged in he can leave a comment and rate a product | Pass | <img src="assets/testing/review1.png">
 10.| User can read the FAQ's| User can read the FAQ's page by accessing the link from the footer| When clicking on the Faq's link from the footer the Faq's page opens | Pass | <img src="assets/testing/faq.png">
 
-## EPIC: Purchase
+### EPIC: Purchase
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Result 
 ----|---------------|-----------------|---------------|-----------|---------------
@@ -46,7 +184,7 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Resul
 5.| User can pay for their goods| User can put in card details and delivery details in the checkout page| User can add the payment detail and delivery details in the form from checkout page  | Pass | <img src="assets/testing/card-details.png">
 6.| User receive order confirmations| After user submitted the purcase they can see order summary and confirmation| User can see the a summary of their order and a order cofirmation after tehy have completted and submited the checkout page | Pass | <img src="assets/testing/checkout-confirmation.png">
 
-## EPIC: User Interaction
+### EPIC: User Interaction
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Result 
 ----|---------------|-----------------|---------------|-----------|---------------
@@ -60,7 +198,7 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Resul
 8.| Logged-in User I can save selected products to whishlist| Logged-in User can save and remove products to wishlist| User can add products to the wishlist from the 'Product Detail' Page and cand remove them from the Wishlist page by clicking the minus icon | Pass |
 9.| User that don't have an account can not access "add to wishlist" | For Users that don't have an account and try to use "add to wishlist" a log-in page will be displayed| Wishlist is not available for user that are not logged-in or they dont have an account | Pass
 
-## EPIC: Accounts
+### EPIC: Accounts
 
 No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Result 
 ----|---------------|-----------------|---------------|-----------|---------------
