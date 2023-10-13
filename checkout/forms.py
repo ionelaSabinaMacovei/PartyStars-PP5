@@ -11,6 +11,7 @@ class CouponForm(forms.ModelForm):
             }
         )
     )
+
     class Meta:
         """ faq form"""
         model = Coupon

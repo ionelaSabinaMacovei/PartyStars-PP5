@@ -128,6 +128,74 @@
 <img src="assets/validators/faq-page.png">
 </p>
 
+# CSS
+
+- All CSS was passed through W3C CSS Validation
+
+## Base.css
+<p>
+<img src="assets/validators/base-css.png">
+</p>
+
+## Products.css
+
+<p>
+<img src="assets/validators/products-css.png">
+</p>
+
+## Checkout.css
+
+<p>
+<img src="assets/validators/checkout-css.png">
+</p>
+
+## Profiles.css
+
+<p>
+<img src="assets/validators/profile-css.png">
+</p>
+
+# JSHINT 
+- All JS was passed through Jshint
+
+## Base
+
+- The Mailchimp script in the base.html page returns errors that cannot be changed due to it belonging to the external API.
+
+<p>
+<img src="assets//validators/base-js.png">
+</p>
+
+## Checkout 
+<p>
+<img src="assets/validators/checkout-js.png">
+</p>
+
+## Shopping Bag
+
+<p>
+<img src="assets/validators/bag-js.png">
+</p>
+
+## Products
+
+<p>
+<img src="assets//validators/products-js.png" >
+</p>
+
+## Profile
+
+<p>
+<img src="assets//validators/profile-js.png" >
+</p>
+
+# PEP8
+ - PEP8 only shows the type of errors that can be ignored.
+
+ <p>
+<img src="assets/validators/pep8.png" >
+</p>
+
 
 
 # Manual Testing

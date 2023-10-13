@@ -29,7 +29,9 @@ def contact_page(request):
                 'cust_name': cust_name,
                 'cust_message': cust_message})
         messages.success(
-            request, f'Thank you {cust_name}, your email has been sent. We will contact you shortly.')
+            request,
+            f'Thank you {cust_name}, your email has been sent.
+            We will contact you shortly.')
         # Send email to store
         send_mail(
             'ALERT! New customer message from ' + cust_name,  # subject line

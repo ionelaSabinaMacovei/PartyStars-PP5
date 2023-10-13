@@ -35,7 +35,8 @@ def generate_sku():
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     sku = models.CharField(
         max_length=6,
         unique=True,
@@ -47,14 +48,18 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2,
+                                 null=True, blank=True)
     review_count = models.DecimalField(
         max_digits=6, decimal_places=0, null=True, blank=True, default=0
     )
-    sale_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    discount = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    sale_price = models.DecimalField(max_digits=6, decimal_places=2,
+                                     null=True, blank=True)
+    discount = models.DecimalField(max_digits=6, decimal_places=2,
+                                   null=True, blank=True)
     is_new = models.BooleanField(default=True)
-    sort_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    sort_price = models.DecimalField(max_digits=6, decimal_places=2,
+                                     null=True, blank=True)
     
     def clean(self):
         if self.price < 0:
