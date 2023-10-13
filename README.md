@@ -90,7 +90,7 @@ Party Stars is a full stack, E-commerce project built using Django, Python, HTML
 ### Project Goals
 
 - Create a fully working e-commerce application that would look and feel like a professionally designed online store. 
-- The website will an intuitive navigation and conformability of use.
+- The website will provide users with an enjoyable, intuitive and easy to use interface.
 
 <br>
 
