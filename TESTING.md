@@ -26,108 +26,106 @@
 
 ## Home Page
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/home-page-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/home-page.png">
 </p>
 
 
-## All Books Page
+## Products Page
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/all-boks-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/products-page1.png">
 </p>
 
-## Book Detail
+## Products Detail
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/book-detail-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/product-detail-page1.png">
 </p>
 
 ## Shopping Bag
 
-Unsolved bug! 
-Due to lack of time, it remained unresolved
-
-<p align="center">
-<img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/bag-page.png">
 </p>
 
 
 ## Checkout Page
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/checkout-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/checkout-page.png">
 </p>
 
 
-## User Account
+## User Profile
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/account-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/profile-page1.png">
 </p>
 
 ### Personal Details
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/user-details-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/profile-page.png">
 </p>
 
 ### Order History
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/order-history-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/order-history-page.png">
 </p>
 
 ### Wishlist
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/wishlist-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/wishlist-page.png">
 </p>
 
 
-## Admin Account
+## Admin Dashboard
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/admin-profile-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/admin-dashboard-page.png">
 </p>
 
-### Add Category 
+### Category Management
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/add-category-validator.jpg" width="100%" height="100%">
+<p>
+<img src="assets/validators/add-category.png">
 </p>
 
-### Add Book
+### Add Product
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/add-book-validator.png" width="100%" height="100%">
-</p>
+- The only errors that were given were because of the nature of Django Template Syntax.
 
-
-### Add FAQ's
-<p align="center">
-<img src="assets/documents/README_docs/validators/add-question-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/add-product-page.png">
 </p>
 
 
-### Newsetter
-<p align="center">
-<img src="assets/documents/README_docs/validators/newsletter-validator.png" width="100%" height="100%">
+### FAQ's Management
+<p>
+<img src="assets/validators/add-faq.png">
 </p>
 
 
-
-
-## Contact Page
-
-<p align="center">
-<img src="assets/documents/README_docs/validators/contact-validator.png" width="100%" height="100%">
+### Coupons Management
+<p>
+<img src="assets/validators/coupon-management.png">
 </p>
+
+
+## Contact Us Page
+
+<p>
+<img src="assets/validators/contact-us.png">
+</p>
+
 
 ## FAQ's
 
-<p align="center">
-<img src="assets/documents/README_docs/validators/questions-validator.png" width="100%" height="100%">
+<p>
+<img src="assets/validators/faq-page.png">
 </p>
 
 
