@@ -102,13 +102,13 @@
                                             </small>
                                             {% include 'products/includes/delete_product_modal.html' %}
                                             {% endif %}
-                                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                            <div class="card-footer bg-white pt-0 border-0 ">
                                                 <div class="row">
                                                     <div class="col">
                                                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                                             {% csrf_token %}
                                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                            <button type="submit" class=" btn btn-lg btn-light px-5 mb-3 rounded-pill" name="quantity" value="1"><i class="fa-solid fa-cart-shopping"></i>Add to bag</button>
+                                                            <button type="submit" class=" btn btn-lg btn-light px-5 mb-3 rounded-pill justify-content-center" name="quantity" value="1"><i class="fa-solid fa-cart-shopping"></i>Add to bag</button>
                                                         </form>
                     
                                                     </div>

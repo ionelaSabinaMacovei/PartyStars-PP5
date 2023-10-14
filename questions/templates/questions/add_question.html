@@ -29,8 +29,8 @@
                 {% csrf_token %}
                 {{ form|crispy}}
                 <div class="text-right">
-                    <a href="{% url 'add_faq' %}" class="btn logo-font btn-style rounded">Cancel</a>
-                    <button class="btn logo-font btn-style rounded" type="submit">Add FAQ</button>
+                    <a href="{% url 'add_faq' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Cancel</a>
+                    <button class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black" type="submit">Add FAQ</button>
 
                 </div>
             </form>
@@ -83,8 +83,8 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-6 text-right mt-2 mb-5">
-            <a href="{% url 'admin_profile' %}" class="btn logo-font btn-style rounded">Back to Admin Panel</a>
-            <a href="{% url 'faq_page' %}" class="btn logo-font btn-style rounded">FAQ's</a>
+            <a href="{% url 'admin_profile' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">Back to Admin Panel</a>
+            <a href="{% url 'faq_page' %}" class="btn btn-lg btn-secondary px-5 mb-3 rounded-pill text-black">FAQ's</a>
         </div>
     </div>
 </div>
