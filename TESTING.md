@@ -7,8 +7,6 @@
 
 [Manual Testing](#manual-testing)
 
-[Responsiveness](#responsiveness)
-
 [Bugs](#bugs)
 
 
@@ -274,3 +272,29 @@ No. |Feature Tested | Expected Result | Actual Result | Pass/Fail | Visual Resul
 4.| User can receive a confirmation email when creating an account| User will recive a notification message then they have to check their email address| After the registration form is submited the user will recive a confirmation email where he will find a link to confirm his account  | Pass | <img src="assets/testing/email-registriation.png">
 5.| Logged-in User can have my details saved| Logged-in User can see their details saved in Personal details fron navbar| In the My profile link from the my acount icon, the user can find the Personal details where he can save his delivery informations | Pass | <img src="assets/testing/personal-details.png">
 
+
+# Bugs
+
+1. 
+- Expected - Sort products by highest and lowest price .
+- Testing - Try to sort for highest and lowest price.
+- Actual Result - Due to sale_price dosent sort properly.
+- Fix - Create a new field in the Product model sort_price that will take the value of price and sale_price depending on which is True. I then used the sort_price value to sort the products by price.
+
+2. 
+- Expected - See delete modal for category and coupon.
+- Testing - Try to delete a category and a cupon.
+- Actual Result - Delete modal dosent respond.
+- Fix - Changed the boostrap min.js link.
+
+3. 
+- Expected - See correct total price when the coupon code is added.
+- Testing - Add the coupon and go to checkout.
+- Actual Result - The price shown not correct, coupon dosent apply.
+- Fix - The problem was because off the sale price, the coupon dosent apply when teh product is on sale, I fixed by adding  the sale_price in coupon view.
+
+4. 
+- Expected - See background and the icons of the shop.
+- Testing - Load the home page of the shop.
+- Actual Result - The background and the icons dose not load.
+- Fix - Fix the problem by clear cookies and changed the link for Fontawesome.
